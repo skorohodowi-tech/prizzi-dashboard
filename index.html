@@ -16,7 +16,7 @@
   --text-secondary: #2E2F4A;
   --text-muted: #6A6B88;
   --accent: #131393;
-  --accent-light: #00F0FF;
+  --accent-light: #4548C2;
   --accent-subtle: #ECEDF8;
   --good: #16794A;
   --good-bg: #E6F4ED;
@@ -33,7 +33,7 @@
   --rec-border: #B8B9E6;
   --header-bg: #131393;
   --header-text: #FFFFFF;
-  --header-aqua: #00F0FF;
+  --header-aqua: #6A6CF0;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -43,8 +43,8 @@
     --text: #E8E9F4;
     --text-secondary: #A8A9C4;
     --text-muted: #6E6F94;
-    --accent: #00F0FF;
-    --accent-light: #00F0FF;
+    --accent: #6A6CF0;
+    --accent-light: #8A8CF4;
     --accent-subtle: #0E1040;
     --good: #34C77B;
     --good-bg: #0A2818;
@@ -61,7 +61,7 @@
     --rec-border: #1E2068;
     --header-bg: #0A0B28;
     --header-text: #FFFFFF;
-    --header-aqua: #00F0FF;
+    --header-aqua: #6A6CF0;
   }
 }
 :root[data-theme="dark"] {
@@ -71,8 +71,8 @@
   --text: #E8E9F4;
   --text-secondary: #A8A9C4;
   --text-muted: #6E6F94;
-  --accent: #00F0FF;
-  --accent-light: #00F0FF;
+  --accent: #6A6CF0;
+  --accent-light: #8A8CF4;
   --accent-subtle: #0E1040;
   --good: #34C77B;
   --good-bg: #0A2818;
@@ -89,7 +89,7 @@
   --rec-border: #1E2068;
   --header-bg: #0A0B28;
   --header-text: #FFFFFF;
-  --header-aqua: #00F0FF;
+  --header-aqua: #6A6CF0;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -207,6 +207,17 @@ td.expand-toggle:hover { color: var(--accent); }
 .badge-at { background: var(--warn-bg); color: var(--warn); }
 .badge-nodata { background: var(--expand-bg); color: var(--text-muted); }
 
+.legend {
+  display: flex; flex-wrap: wrap; gap: 18px; row-gap: 10px;
+  padding: 12px 14px; margin-bottom: 14px; border-radius: 8px;
+  background: var(--surface-raised); border: 1px solid var(--border);
+  font-size: 12px; color: var(--text-secondary);
+}
+.legend-group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.legend-group .legend-title { font-weight: 700; color: var(--text); margin-right: 2px; }
+.legend-item { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+.legend-item .stock-in, .legend-item .stock-out, .legend-item .stock-unk { font-weight: 700; font-size: 11px; }
+
 .config-badge {
   display: inline-block; padding: 1px 6px; border-radius: 3px;
   font-size: 10px; font-weight: 600; letter-spacing: 0.04em;
@@ -218,11 +229,11 @@ td.expand-toggle:hover { color: var(--accent); }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .config-ass { background: #1A332E; color: #4DB6AC; }
   :root:not([data-theme="light"]) .config-diy { background: #332A1A; color: #FFB74D; }
-  :root:not([data-theme="light"]) .config-head { background: #0E1040; color: #00F0FF; }
+  :root:not([data-theme="light"]) .config-head { background: #0E1040; color: #6A6CF0; }
 }
 :root[data-theme="dark"] .config-ass { background: #1A332E; color: #4DB6AC; }
 :root[data-theme="dark"] .config-diy { background: #332A1A; color: #FFB74D; }
-:root[data-theme="dark"] .config-head { background: #0E1040; color: #00F0FF; }
+:root[data-theme="dark"] .config-head { background: #0E1040; color: #6A6CF0; }
 
 .method-badge {
   display: inline-block; padding: 1px 6px; border-radius: 3px;
@@ -317,6 +328,34 @@ td.expand-toggle:hover { color: var(--accent); }
     <div class="pill-group" id="view-toggle">
       <button class="active" data-view="compact">Compact</button>
       <button data-view="tiers">Tiers</button>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-group">
+      <span class="legend-title">Ціна Prizzi (тier):</span>
+      <span class="legend-item"><b>HEAD</b> — тільки машина</span>
+      <span class="legend-item"><b>FULL</b> — HEAD + комплект (стіл, мотор)</span>
+      <span class="legend-item"><b>ASS</b> — FULL + складання</span>
+    </div>
+    <div class="legend-group">
+      <span class="legend-title">Бейдж на картці конкурента (що саме він продає):</span>
+      <span class="legend-item"><span class="config-badge config-head">HEAD</span> тільки голова</span>
+      <span class="legend-item"><span class="config-badge config-diy">DIY</span> розібраний, збираєш сам</span>
+      <span class="legend-item"><span class="config-badge config-ass">ASS</span> в зборі</span>
+    </div>
+    <div class="legend-group">
+      <span class="legend-title">Наявність:</span>
+      <span class="legend-item"><span class="stock-in">IN</span> в наявності</span>
+      <span class="legend-item"><span class="stock-out">OUT</span> розпродано</span>
+      <span class="legend-item"><span class="stock-unk">LST</span> вказано як "в продажу"</span>
+      <span class="legend-item"><span class="stock-unk">?</span> невідомо</span>
+      <span class="legend-item"><span class="stock-unk">DIS</span> знято з продажу</span>
+      <span class="legend-item"><span class="stock-unk">QTE</span> тільки під запит ціни</span>
+    </div>
+    <div class="legend-group" style="flex-basis:100%">
+      <span class="legend-title">H: / F: / A: на картці конкурента:</span>
+      <span style="white-space:normal">наш розрахунок, скільки коштувала б ЦЯ модель в інших тierах — не ціна конкурента, оцінка</span>
     </div>
   </div>
 
