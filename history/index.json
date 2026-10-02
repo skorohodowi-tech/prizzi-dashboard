@@ -1,1 +1,1 @@
-{"dates":[{"date":"2026-10-01","run_id":4,"finished_at":"2026-10-01T20:00:30.451960+00:00","successes":47,"targets":72,"backfilled":false}],"latest":"2026-10-01"}
+{"dates":[{"date":"2026-10-01","run_id":4,"finished_at":"2026-10-01T20:00:30.451960+00:00","successes":47,"targets":72,"backfilled":false},{"date":"2026-10-02","run_id":5,"finished_at":"2026-10-02T16:16:56.131131+00:00","successes":47,"targets":73,"backfilled":false}],"latest":"2026-10-02"}
