@@ -1,0 +1,1458 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Динаміка цін - Prizzi Price Parser</title>
+<link rel="icon" type="image/svg+xml" sizes="any" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjE3IiBoZWlnaHQ9IjIxNiIgdmlld0JveD0iMCAwIDIxNyAyMTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8yOV82NTQpIj4KPHBhdGggZD0iTTIxNi40NCAxMDhDMjE2LjQ0IDQ4LjM1MzIgMTY4LjA4NyAwIDEwOC40NCAwQzQ4Ljc5MzIgMCAwLjQzOTk0MSA0OC4zNTMyIDAuNDM5OTQxIDEwOEMwLjQzOTk0MSAxNjcuNjQ3IDQ4Ljc5MzIgMjE2IDEwOC40NCAyMTZDMTY4LjA4NyAyMTYgMjE2LjQ0IDE2Ny42NDcgMjE2LjQ0IDEwOFoiIGZpbGw9IiMxMzEzOTMiPjwvcGF0aD4KPHBhdGggZD0iTTEwNy4wMjUgMTMyLjU4NUMxMDcuMjI1IDEyOS4xMzggMTA5LjMzNiAxMjYuODQ3IDExMi4yNjUgMTIzLjkxOEMxMTMuMzIxIDEyMi44NDIgMTE0Ljg3NSAxMjEuNjg3IDExNi43MDggMTIwLjQxMkMxMjAuOTcxIDExNy40MjMgMTI2Ljc0OSAxMTMuODE3IDEzMS4yNzEgMTA5LjI5NUMxNDYuMDE0IDk0LjU1MjQgMTQ2LjY5MSA3Mi42Nzc1IDEzMi45ODQgNTguOTcwOEMxMTcuNTQ0IDQzLjUzMDggOTQuMzk0NSA0NS4yNjQxIDc2LjQ0NDMgNjMuMjM0MkM1OC4yMzUxIDgxLjQyMzUgNTcuNTU3OCAxMDcuNjgxIDc2LjA4NTcgMTI2LjIyOUw4OC4zNTggMTM4LjUwMUM4OC4xMzg4IDEzOC45IDg3Ljg5OTggMTM5LjI1OSA4Ny42ODA2IDEzOS41NzdDODYuNTY0OSAxNDEuMTkxIDg1LjU0ODkgMTQyLjU4NiA4NC40MzMyIDE0My43MDFDODMuNjU2MyAxNDQuNDc4IDgzLjU5NjUgMTQ1LjcxMyA4NC4zNTM1IDE0Ni41MUw5MC43Mjg4IDE1My4yODRDOTEuNDY1OSAxNTQuMDYxIDkyLjY4MTIgMTU0LjE0MSA5My40OTggMTUzLjQyM0M5NC42MzM2IDE1Mi40MjcgOTUuOTI4NSAxNTEuMTcyIDk3LjAyNDMgMTUwLjAzN0M5Ny44MDEyIDE0OS4yMiA5OS4wNzYzIDE0OS4yMiA5OS44NzMyIDE1MC4wMTdMMTI1LjEzNSAxNzUuMjc4QzEyNS45MTIgMTc2LjA1NSAxMjcuMTY3IDE3Ni4wNTUgMTI3Ljk2NCAxNzUuMjc4TDEzNi43MSAxNjYuNTUyQzEzNy40NjcgMTY1Ljc5NSAxMzcuNDg3IDE2NC41NiAxMzYuNzUgMTYzLjc2M0wxMDcuMDg1IDEzMi42MDRDMTA3LjAyNSAxMzIuMDQ3IDEwNy4wMDUgMTMzLjEwMiAxMDcuMDQ1IDEzMi42MDRMMTA3LjAyNSAxMzIuNTg1Wk05Ni40ODY0IDEyMy41OEw5NS45MDg2IDEyMy4wMDJMODcuNjAwOSAxMTQuNzE0Qzc1LjI4ODggMTAyLjM4MiA3NC43MTEgODUuOTI2IDg2LjM0NTggNzQuMjkxMkM5Ny41MjIzIDYzLjExNDcgMTExLjY4NyA2MS44Mzk2IDEyMS4wMTEgNzEuMTgzM0MxMjkuNTM4IDc5LjY5MDIgMTI5LjI5OSA5MC45ODYzIDEyMC41NTMgOTkuNzMyM0MxMTYuNDA5IDEwMy44NzYgMTEwLjEzMyAxMDcuMTQzIDEwNS40NzEgMTExLjA2OEMxMDQuODE0IDExMS42MjYgMTA0LjE5NiAxMTIuMTg0IDEwMy42MTkgMTEyLjc2MkMxMDAuMjcyIDExNi4wODkgOTcuOTgwNSAxMTkuNzc0IDk2LjQ4NjQgMTIzLjU4WiIgZmlsbD0iIzAwRjBGRiI+PC9wYXRoPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzI5XzY1NCI+CjxyZWN0IHdpZHRoPSIyMTYiIGhlaWdodD0iMjE2IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC40Mzk5NDEpIj48L3JlY3Q+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEcklEQVR4nLRXa2wUVRT+7szuTLf7aHe3wAbFGoM8/lgwNdbHRk2gKiYaXwX+QQJBIBZSREw0CkYjiQJKVFL9gf4wMaU1MSi2YiIkxqYmaAChVcTUR2mp3Z1uu4/ubneu5852tzx2O7Ol/ZKZe+bOufc795577j3XBstoLvf5Uo+R8DRjfBHnrIrKKvGH5CGShwB2LpPRW4eHWTvQmLTSKzNTcLkOzlFVtpvEdfSUwxqiZNanyST2RKON/2F6Bux3+P32JupoF6m5MS3wUXrtDYUC7wANKVg1wOc76KGijTG2AjMAztHBubJa0zZFTA2orDxwqyzbviFxCWYQnPPzjNnrQ6HNfUUNcLubqxQl1UniQswCyIgzVATD4caRXJ00+Xu/w25PHp0tcgFy6R30bqWIsufqbDnB67VvYwx1VjoaX+xHOngLxmvmQfc5oJzohdraDUkbM21LHCu93tQOTcNe41u8XK5DcxUlfYEs9EzVmJN2/OUgxtbXFLBKh2tbB9T2izADLcoILcpqsSgNFxD5LlNyiSF6aNUkeTQN25lBsMjEfmOTEN1Xj8x8F8xAs1DBWLJJyJIYF1WsNWsUfyWI1MrbjJGWv90J37JmVDzZAu+dH8P1wnEgrQNlMuIv3gcrININglv2+fx19LF9KuXMAg+iB+oNhzl3n4Tj8Ol8+IjS1hMichvG75oPXm6H45PTsAC3w9HVbiPyJ8w0k08tMZjk38NQP/u1oI7tl36j1G/2wDrYw8IFS83U0jQyg+SnvqJ7d2aRP6tzdhAlYKlEJ1nAVE2diFZVLvhbuCj+XK0h27/vhVXQCRoQUWBqgNQ7bJTpYDX4NUYkH12IyNE1FMt2yH9ocDSfQgkISFa0lON/GqUecCK+8558fWLjckTffwTcrYANxuHacgwsmYFV0OyXibkdoKfazAD5txAytAOOrV8G+aIGNpRA/CUKOU6eOXIejve6IA/EUArIBb0UBXzALC9hROLe+BVGjjwDfZ4TsTceAhvJbkDuzcfyM1QqaAYGyAWs24qy3DcKz+o2SP3RbGOPConqpks+gW6KAv6lVW35nxG4102q6ze5Ed9h6fwqAt4hhcPPd5F0yWqT1OOLr/pObKlFfGstSgfvF9zCBTQJ/HOrzco+OgXl6wvwrP0i745EUx0SG5ajFOg6DgtuY/U5nR8EVFXvEadUKZ1kyAWR1mfB52aTZeerJ1BWZKu+EjRgkREtEJmRsQ/EYltFKL6LEiEWZsWaNrDL2fCLvf6gpeOYVv9bubQsvxGFw8qblCh0okTIf0VQQe4QRriavoV8KWpCzr/TNGVf7rtAUpr8kapvxyyABniW3vcXSUqB0dFNQ7qurxApNGYePUS+6kry6wwQ0LTtf3Ou3ktG/IAZgph2eu4m8n+v/TfFHtyi+P2Xd97o1YymfU84HKAF3lDwlLJ4OcVrJDaQ+hxYAhcX0pYbvJxe1ymrrPywRpL0B0imC4Zxdctd33rEw5j0s65nTmpa47nsEWaO/wEAAP//IPfKtAAAAAZJREFUAwAwwK0qF/QO/QAAAABJRU5ErkJggg==">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap">
+
+<style>
+:root {
+  --bg: #F0F1F5;
+  --surface: #FFFFFF;
+  --surface-raised: #FAFAFC;
+  --text: #060720;
+  --text-secondary: #2E2F4A;
+  --text-muted: #6A6B88;
+  --accent: #131393;
+  --accent-light: #4548C2;
+  --accent-subtle: #ECEDF8;
+  --good: #16794A;
+  --good-bg: #E6F4ED;
+  --warn: #B87514;
+  --warn-bg: #FDF3E0;
+  --critical: #DA3F3F;
+  --critical-bg: #FDEAEA;
+  --border: #D8D9E4;
+  --border-strong: #B8B9CC;
+  --row-hover: #E8E9F2;
+  --expand-bg: #F3F4F9;
+  --shadow: 0 1px 3px rgba(6,7,32,0.08);
+  --rec-bg: #ECEDF8;
+  --rec-border: #B8B9E6;
+  --header-bg: #131393;
+  --header-bg-image: none;
+  --header-text: #FFFFFF;
+  --header-aqua: #6A6CF0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #060720;
+    --surface: #0E0F2E;
+    --surface-raised: #14153A;
+    --text: #E8E9F4;
+    --text-secondary: #A8A9C4;
+    --text-muted: #6E6F94;
+    --accent: #6A6CF0;
+    --accent-light: #8A8CF4;
+    --accent-subtle: #0E1040;
+    --good: #34C77B;
+    --good-bg: #0A2818;
+    --warn: #E6A33A;
+    --warn-bg: #281E08;
+    --critical: #E65454;
+    --critical-bg: #280A0A;
+    --border: #1E1F44;
+    --border-strong: #2E2F58;
+    --row-hover: #12133A;
+    --expand-bg: #0A0B28;
+    --shadow: 0 1px 3px rgba(0,0,0,0.5);
+    --rec-bg: #0E1048;
+    --rec-border: #1E2068;
+    --header-bg: #0A0B28;
+    --header-bg-image: linear-gradient(100deg, #14177F 0%, #0C0E3C 45%, #0A0B28 100%);
+    --header-text: #FFFFFF;
+    --header-aqua: #6A6CF0;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #060720;
+  --surface: #0E0F2E;
+  --surface-raised: #14153A;
+  --text: #E8E9F4;
+  --text-secondary: #A8A9C4;
+  --text-muted: #6E6F94;
+  --accent: #6A6CF0;
+  --accent-light: #8A8CF4;
+  --accent-subtle: #0E1040;
+  --good: #34C77B;
+  --good-bg: #0A2818;
+  --warn: #E6A33A;
+  --warn-bg: #281E08;
+  --critical: #E65454;
+  --critical-bg: #280A0A;
+  --border: #1E1F44;
+  --border-strong: #2E2F58;
+  --row-hover: #12133A;
+  --expand-bg: #0A0B28;
+  --shadow: 0 1px 3px rgba(0,0,0,0.5);
+  --rec-bg: #0E1048;
+  --rec-border: #1E2068;
+  --header-bg: #0A0B28;
+  --header-bg-image: linear-gradient(100deg, #14177F 0%, #0C0E3C 45%, #0A0B28 100%);
+  --header-text: #FFFFFF;
+  --header-aqua: #6A6CF0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.shell { max-width: 1500px; margin: 0 auto; padding: 24px 20px 60px; }
+
+.brand-bar {
+  background: var(--header-bg); background-image: var(--header-bg-image);
+  padding: 14px 24px;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 16px;
+  border-radius: 12px; margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(6,7,32,0.15);
+}
+/* Official lockup (design system: prizzi-aqua.svg — for dark / Cadmium Blue grounds).
+   Brand rules: never under 40px tall, never recoloured or stretched: set height only. */
+.brand { display: flex; align-items: flex-start; gap: 16px; flex-shrink: 0; --logo-h: 52px; }
+.brand .logo { height: var(--logo-h); width: auto; display: block; flex-shrink: 0; }
+/* The title is centred on the logo's wordmark row ("rizzi", 70% of the way down) and the small line on its tagline row
+   ("sewing machine", 95%), so logo and name read as one lockup instead of a word floating beside a picture. */
+.titles { position: relative; height: var(--logo-h); min-width: 168px; padding-left: 16px; border-left: 1px solid rgba(255,255,255,0.22); }
+.titles h1 { position: absolute; left: 16px; top: calc(var(--logo-h) * 0.68); transform: translateY(-50%); margin: 0;
+  font-weight: 800; font-size: 21px; line-height: 1; letter-spacing: 0.01em; color: var(--header-text); white-space: nowrap; }
+.titles .sub { position: absolute; left: 16px; top: calc(var(--logo-h) * 0.965); transform: translateY(-50%);
+  font-size: 10.5px; line-height: 1; letter-spacing: 0.04em; color: rgba(255,255,255,0.6); white-space: nowrap; }
+.brand-bar .meta { font-size: 12px; color: rgba(255,255,255,0.55); margin-left: auto; }
+.brand-bar .help-btn + .meta { margin-left: 0; }
+.brand-bar .help-btn { margin-left: auto; }
+/* ---- line colours: one per competitor, readable on both grounds; the brand navy (--accent) is kept for Prizzi ---- */
+:root {
+  --c0: #E8590C; --c1: #0C8599; --c2: #7950F2; --c3: #37B24D; --c4: #D6336C; --c5: #F08C00;
+  --c6: #228BE6; --c7: #A0522D; --c8: #12B886; --c9: #AE3EC9; --c10: #5C940D; --c11: #5C7080;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --c0: #FF8A4C; --c1: #3BC9DB; --c2: #9775FA; --c3: #69DB7C; --c4: #F783AC; --c5: #FFC038;
+    --c6: #4DABF7; --c7: #D9A074; --c8: #38D9A9; --c9: #DA77F2; --c10: #A9E34B; --c11: #A5B4C4;
+  }
+}
+:root[data-theme="dark"] {
+  --c0: #FF8A4C; --c1: #3BC9DB; --c2: #9775FA; --c3: #69DB7C; --c4: #F783AC; --c5: #FFC038;
+  --c6: #4DABF7; --c7: #D9A074; --c8: #38D9A9; --c9: #DA77F2; --c10: #A9E34B; --c11: #A5B4C4;
+}
+
+/* ---- page switch in the header ---- */
+.page-nav { display: flex; gap: 6px; margin-left: 8px; flex-wrap: wrap; }
+.page-nav a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 700; font-size: 13px; line-height: 1;
+  padding: 8px 15px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.28); white-space: nowrap; }
+.page-nav a:hover { background: rgba(255,255,255,0.16); color: #fff; }
+.page-nav a[aria-current="page"] { background: #fff; color: #131393; border-color: #fff; }
+.page-nav a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.brand-bar .help-btn { background: rgba(255,255,255,0.14); color: #fff; border: 1px solid rgba(255,255,255,0.4); border-radius: 999px;
+  padding: 7px 16px; font-family: inherit; font-size: 13px; font-weight: 700; line-height: 1; cursor: pointer; white-space: nowrap; }
+.brand-bar .help-btn:hover { background: rgba(255,255,255,0.26); }
+.brand-bar .help-btn[aria-expanded="true"] { background: rgba(255,255,255,0.26); border-color: rgba(255,255,255,0.7); }
+.brand-bar .help-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* ---- legend (same box as the table page) ---- */
+.legend-box { margin-bottom: 18px; border-radius: 8px; background: var(--surface-raised); border: 1px solid var(--border); font-size: 12px; color: var(--text-secondary); }
+.legend-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; font-size: 13px; font-weight: 600; color: var(--text); border-bottom: 1px solid var(--border); }
+.legend-x { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-strong); border-radius: 999px; width: 26px; height: 26px; font-family: inherit; font-size: 16px; line-height: 1; cursor: pointer; }
+.legend-x:hover { background: var(--row-hover); color: var(--text); }
+.legend-x:focus-visible, .legend-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.legend-body { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 28px; padding: 2px 14px 14px; }
+.legend-col { padding-top: 10px; }
+.legend-h { font-weight: 700; color: var(--text); margin: 8px 0 4px; font-size: 12px; }
+.legend-h:first-child { margin-top: 0; }
+.legend-line { margin: 4px 0; line-height: 1.5; }
+.legend-note { color: var(--text-muted); }
+.legend-foot { display: flex; justify-content: flex-end; padding: 0 14px 12px; }
+.legend-close { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-strong); border-radius: 999px; padding: 6px 14px; font-family: inherit; font-size: 12px; font-weight: 600; line-height: 1; cursor: pointer; }
+.legend-close:hover { background: var(--row-hover); color: var(--text); }
+.lg-line { display: inline-block; width: 26px; height: 0; border-top: 3px solid var(--accent); vertical-align: middle; margin-right: 4px; }
+.lg-line.thin { border-top-width: 2px; border-top-color: var(--c0); }
+.lg-line.dash { border-top-style: dashed; }
+.lg-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; border: 2px solid var(--c0); background: var(--surface); vertical-align: middle; margin-right: 4px; }
+@media (max-width: 760px) { .legend-body { grid-template-columns: 1fr; } }
+
+/* ---- controls ---- */
+.toolbar { display: flex; flex-wrap: wrap; gap: 14px 26px; align-items: flex-end; margin-bottom: 18px; }
+.fgroup { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.fgroup.grow { margin-left: auto; }
+.toolbar[hidden], .fgroup[hidden] { display: none; }   /* author display rules would otherwise beat the hidden attribute */
+.flabel { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); font-weight: 600; }
+.pill-group { display: flex; gap: 0; flex-wrap: nowrap; }
+.pill-group button { background: var(--surface); border: 1px solid var(--border); padding: 7px 14px; font-size: 12px; font-weight: 600; color: var(--text-secondary); cursor: pointer; font-family: inherit; line-height: 1.2; white-space: nowrap; transition: background 0.15s, color 0.15s; }
+.pill-group button:first-child { border-radius: 6px 0 0 6px; }
+.pill-group button:last-child { border-radius: 0 6px 6px 0; }
+.pill-group button:not(:first-child) { border-left: none; }
+.pill-group button:hover:not(.active):not(:disabled) { background: var(--row-hover); }
+.pill-group button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.pill-group button:disabled { opacity: 0.4; cursor: not-allowed; }
+.pill-group button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; position: relative; z-index: 1; }
+.range-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.dates { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); }
+.dates input[type="date"] { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; font-size: 12px; color: var(--text); font-family: inherit; color-scheme: light dark; }
+.dates input[type="date"]:focus-visible, #q:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+#q { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 7px 12px; font-size: 13px; color: var(--text); width: 210px; max-width: 100%; font-family: inherit; }
+#q::placeholder { color: var(--text-muted); }
+.filter-note { margin: -6px 0 14px; padding: 8px 12px; border-radius: 6px; background: var(--accent-subtle); color: var(--text-secondary); font-size: 12px; line-height: 1.45; }
+
+/* ---- cards ---- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; box-shadow: var(--shadow); }
+.card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 4px; font-weight: 600; }
+.card .value { font-size: 26px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.card .sub { font-size: 12px; color: var(--text-muted); margin-top: 3px; line-height: 1.5; }
+.price-up { color: var(--good); }
+.price-down { color: var(--critical); }
+.price-flat { color: var(--text-muted); }
+.own-move { color: var(--accent); }
+.gap-pos { color: var(--good); }
+.gap-neg { color: var(--critical); }
+.gap-hot { font-weight: 700; border-radius: 3px; padding: 0 4px; }
+.gap-neg.gap-hot { background: var(--critical-bg); }
+.gap-pos.gap-hot { background: var(--good-bg); }
+.gap-sep { color: var(--text-muted); padding: 0 3px; }
+
+/* ---- tables ---- */
+.table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
+.table-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+table.tt thead th { background: var(--surface-raised); border-bottom: 2px solid var(--border-strong); padding: 10px 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); text-align: left; white-space: nowrap; cursor: pointer; user-select: none; position: sticky; top: 0; z-index: 2; }
+table.tt thead th:hover { color: var(--accent); }
+table.tt thead th.sorted::after { content: ' \25B2'; font-size: 9px; }
+table.tt thead th.sorted.desc::after { content: ' \25BC'; }
+table.tt thead th.nosort { cursor: default; }
+table.tt thead th.nosort:hover { color: var(--text-muted); }
+th.num, td.num { text-align: right; }
+table.tt tbody tr.mrow { border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.1s; }
+table.tt tbody tr.mrow:hover { background: var(--row-hover); }
+table.tt tbody tr.mrow.open { background: var(--accent-subtle); }
+table.tt tbody tr.mrow:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+td { padding: 8px 12px; font-size: 13px; white-space: nowrap; }
+td.name { font-weight: 600; max-width: 260px; overflow: hidden; text-overflow: ellipsis; }
+td.tog { width: 28px; text-align: center; color: var(--text-muted); font-size: 14px; padding-right: 0; }
+.mrow:hover td.tog, .mrow.open td.tog { color: var(--accent); }
+td.spark-cell { padding-top: 4px; padding-bottom: 4px; }
+.sub-note { display: block; font-size: 11px; font-weight: 400; color: var(--text-muted); }
+.star { color: var(--warn); font-weight: 800; cursor: help; }
+.no-data { color: var(--text-muted); font-style: italic; font-size: 13px; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.03em; font-variant-numeric: tabular-nums; }
+.badge.b-none { background: var(--expand-bg); color: var(--text-muted); font-weight: 600; }
+.badge.b-down { background: var(--critical-bg); color: var(--critical); }
+.badge.b-up { background: var(--good-bg); color: var(--good); }
+.badge.b-mix { background: var(--warn-bg); color: var(--warn); }
+.config-badge { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 10px; font-weight: 600; letter-spacing: 0.04em; }
+.config-ass { background: #E0F2F1; color: #00695C; }
+.config-diy { background: #FFF3E0; color: #E65100; }
+.config-head { background: #ECEDF8; color: #131393; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .config-ass { background: #1A332E; color: #4DB6AC; }
+  :root:not([data-theme="light"]) .config-diy { background: #332A1A; color: #FFB74D; }
+  :root:not([data-theme="light"]) .config-head { background: #0E1040; color: #6A6CF0; }
+}
+:root[data-theme="dark"] .config-ass { background: #1A332E; color: #4DB6AC; }
+:root[data-theme="dark"] .config-diy { background: #332A1A; color: #FFB74D; }
+:root[data-theme="dark"] .config-head { background: #0E1040; color: #6A6CF0; }
+.stock-in { color: var(--good); font-weight: 700; font-size: 11px; }
+.stock-out { color: var(--critical); font-weight: 700; font-size: 11px; }
+.stock-unk { color: var(--text-muted); font-size: 11px; }
+
+/* ---- the opened row ---- */
+.detail-row td { padding: 0; background: var(--expand-bg); white-space: normal; }
+.detail-content { padding: 16px 20px 20px; box-sizing: border-box; position: sticky; left: 0; width: var(--scroll-w, auto); max-width: 100%; }
+.d-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 12px; }
+.d-title { font-size: 16px; font-weight: 800; }
+.d-link { font-size: 12px; font-weight: 600; color: var(--accent-light); text-decoration: none; }
+.d-link:hover { text-decoration: underline; }
+.d-note { font-size: 12px; color: var(--text-muted); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; margin-bottom: 14px; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; }
+.stat .s-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); font-weight: 600; }
+.stat .s-main { font-size: 20px; font-weight: 700; margin-top: 2px; }
+.stat .s-second { font-size: 13px; font-weight: 600; color: var(--accent); margin-top: 1px; }
+.stat .s-sub { font-size: 11px; color: var(--text-muted); margin-top: 3px; line-height: 1.45; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); border-radius: 999px; padding: 4px 11px 4px 9px; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; line-height: 1.2; }
+.chip:hover { border-color: var(--accent); }
+.chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.chip .sw { width: 10px; height: 10px; border-radius: 50%; background: var(--c); flex: none; }
+.chip .val { color: var(--text-muted); font-weight: 500; font-variant-numeric: tabular-nums; }
+.chip[aria-pressed="false"] { background: transparent; border-style: dashed; color: var(--text-muted); }
+.chip[aria-pressed="false"] .sw { background: transparent; border: 2px solid var(--c); }
+.chip[aria-pressed="false"] .lbl { text-decoration: line-through; }
+.d-sub { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin: 16px 0 8px; font-weight: 600; }
+table.ev { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+table.ev th { text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); padding: 8px 12px; background: var(--surface-raised); border-bottom: 1px solid var(--border-strong); white-space: nowrap; }
+table.ev th.num { text-align: right; }
+table.ev td { border-bottom: 1px solid var(--border); padding: 6px 12px; }
+table.ev tr:last-child td { border-bottom: none; }
+.who { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+.who .sw { width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+.who.own { color: var(--accent); }
+.dim { color: var(--text-muted); font-weight: 400; font-size: 12px; }
+.ev-wrap { overflow-x: auto; }
+
+/* ---- charts ---- */
+.chart-wrap { position: relative; }
+svg.chart { display: block; width: 100%; height: auto; touch-action: pan-y; outline: none; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+svg.chart:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.chart .grid { stroke: var(--border); stroke-width: 1; }
+.chart .axis { fill: var(--text-muted); font-size: 11px; font-family: inherit; font-variant-numeric: tabular-nums; }
+.chart .ref { stroke: var(--text-muted); stroke-width: 1; stroke-dasharray: 2 4; opacity: 0.8; }
+.chart .ref-label { fill: var(--text-muted); font-size: 10.5px; font-family: inherit; }
+.chart .zero { stroke: var(--critical); stroke-width: 1; opacity: 0.55; }
+.chart .guide { stroke: var(--text-muted); stroke-width: 1; stroke-dasharray: 3 3; }
+.chart .ln { fill: none; stroke-linejoin: round; stroke-linecap: round; }
+.chart .gap { fill: none; stroke-linecap: round; stroke-dasharray: 3 4; opacity: 0.8; }
+.chart .empty-msg { fill: var(--text-muted); font-size: 13px; font-family: inherit; text-anchor: middle; }
+.ctip { position: absolute; z-index: 6; pointer-events: none; background: var(--surface); border: 1px solid var(--border-strong); border-radius: 8px; box-shadow: 0 6px 20px rgba(6,7,32,0.22); padding: 8px 10px; font-size: 12px; min-width: 200px; max-width: min(340px, 92%); }
+.ctip[hidden] { display: none; }
+.ctip .t-date { font-weight: 700; margin-bottom: 5px; color: var(--text); }
+.ctip .t-row { display: grid; grid-template-columns: 10px 1fr auto; gap: 8px; align-items: baseline; padding: 2px 0; }
+.ctip .t-row .sw { width: 9px; height: 9px; border-radius: 50%; background: var(--c); align-self: center; }
+.ctip .t-name { color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ctip .t-val { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.ctip .t-val .dim { font-weight: 400; }
+.ctip .t-row.own .t-name, .ctip .t-row.own .t-val { color: var(--accent); }
+.ctip .t-row.carried .t-val { color: var(--text-muted); font-weight: 500; font-style: italic; }
+.ctip .t-extra { grid-column: 2 / 4; font-size: 11px; color: var(--text-muted); }
+.ctip .t-out { color: var(--critical); font-weight: 700; }
+svg.spark { display: block; width: 120px; height: 30px; overflow: visible; }
+.spark .l-own { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.spark .l-mkt { fill: none; stroke: var(--c0); stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
+.spark .l-base { stroke: var(--border-strong); stroke-width: 1; stroke-dasharray: 2 3; }
+.spark .end-own { fill: var(--accent); }
+.spark .end-mkt { fill: var(--c0); }
+.empty { padding: 36px 16px; text-align: center; color: var(--text-secondary); background: var(--surface); border: 1px dashed var(--border-strong); border-radius: 10px; line-height: 1.6; }
+.empty a { color: var(--accent); font-weight: 600; }
+.foot { margin: 14px 2px 0; font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+@media (max-width: 768px) {
+  .brand-bar .meta { margin-left: 0; width: 100%; }
+  .toolbar { gap: 12px 14px; }
+  .cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .card { padding: 12px; }
+  .card .value { font-size: 21px; }
+  .card .sub { font-size: 11.5px; }
+  .detail-content { padding: 12px 12px 16px; }
+  .fgroup.grow { margin-left: 0; width: 100%; }
+  #q { width: 100%; }
+  .page-nav { margin-left: 0; }
+  .shell { padding: 16px 12px 48px; }
+}
+@media (max-width: 560px) { .ctip { position: static; max-width: none; margin-top: 8px; box-shadow: none; } }
+@media (max-width: 480px) { .pill-group button { padding: 7px 9px; font-size: 11.5px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <div class="brand-bar">
+    <div class="brand">
+    <svg class="logo" viewBox="0 0 217 203" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Prizzi — sewing machine" focusable="false"><path d="M81.4274 129.154L81.4668 136.487C79.9285 136.132 78.3507 136.132 76.5362 136.132C68.6866 136.132 63.756 142.006 63.756 148.826V172.204H55.5514V129.036H63.3221V135.699C66.4383 131.204 71.6844 128.208 77.5618 128.208C78.8635 128.208 80.244 128.287 81.4274 128.484V129.154Z" fill="#00F0FF" stroke="#00F0FF" stroke-width="1.80249" stroke-miterlimit="10"></path><path d="M101.204 111.769V121.27H92.0524V111.769H101.204ZM100.691 129.036V172.204H92.4863V129.036H100.691Z" fill="#00F0FF" stroke="#00F0FF" stroke-width="1.80249" stroke-miterlimit="10"></path><path d="M149.814 164.438V172.204H112.065V164.438L139.283 136.803H112.854V129.036H149.381V136.803L122.282 164.438H149.814Z" fill="#00F0FF" stroke="#00F0FF" stroke-width="1.80249" stroke-miterlimit="10"></path><path d="M196.019 164.438V172.204H158.27V164.438L185.487 136.803H159.059V129.036H195.585V136.803L168.486 164.438H196.019Z" fill="#00F0FF" stroke="#00F0FF" stroke-width="1.80249" stroke-miterlimit="10"></path><path d="M215.44 111.769V121.27H206.289V111.769H215.44ZM214.927 129.036V172.204H206.723V129.036H214.927Z" fill="#00F0FF" stroke="#00F0FF" stroke-width="1.80249" stroke-miterlimit="10"></path><path d="M37.2208 100.237C40.8939 96.985 45.3017 96.8102 51.1786 96.8102C53.3125 96.8102 56.0411 97.1948 59.1545 97.7542C66.4308 99.0478 75.8409 101.215 84.9363 101.215C114.531 101.215 137.164 79.9585 137.164 52.4432C137.164 21.4668 112.187 0 76.1208 0C39.5996 0 12.5585 25.6273 12.5235 62.827V87.4404C11.8939 87.6152 11.2992 87.755 10.7745 87.825C6.82149 88.5242 3.53318 89.0137 0.559712 88.4543L0 107.299C3.1134 107.718 9.16528 107.823 12.5235 107.509V198.34H35.6466L37.2208 100.237C37.7106 99.6072 36.6261 100.656 37.1858 100.202L37.2208 100.237ZM35.6816 80.6227V79.469V62.827C35.6816 38.1088 51.6334 21.0123 75.0014 21.0123C97.4248 21.0123 112.922 33.9483 112.922 52.653C112.922 69.7495 101.378 80.8325 83.8168 80.8325C75.4911 80.8325 65.9061 77.8258 57.3005 77.0916C56.0761 76.9867 54.8867 76.9168 53.7323 76.9168C47.0508 76.9168 41.0339 78.2803 35.7166 80.6227H35.6816Z" fill="#00F0FF"></path><path d="M56.2348 190.303C56.2348 191.165 56.9826 191.764 58.4781 192.176C58.8894 192.288 59.1886 192.363 59.3007 192.401C59.4129 192.438 59.6746 192.513 60.0859 192.626C60.4598 192.738 60.7589 192.85 60.9085 192.925C61.058 193 61.2824 193.15 61.5441 193.337C61.8058 193.524 62.0302 193.712 62.1423 193.899C62.2545 194.086 62.3667 194.311 62.4788 194.611C62.591 194.91 62.6284 195.21 62.6284 195.509C62.6284 196.446 62.2545 197.195 61.5067 197.794C60.7963 198.393 59.8616 198.655 58.6651 198.655C57.6556 198.655 56.7582 198.431 56.0104 197.981C55.2626 197.532 54.7392 196.895 54.4401 196.146L55.6739 195.435C55.8609 195.996 56.2348 196.446 56.7582 196.783C57.2817 197.12 57.9173 197.27 58.6651 197.27C59.4129 197.27 60.0111 197.12 60.4598 196.82C60.9085 196.521 61.1702 196.109 61.1702 195.509C61.1702 194.648 60.4224 194.049 58.9268 193.637C58.5155 193.524 58.2164 193.487 58.1043 193.45C57.9547 193.45 57.7304 193.337 57.3191 193.225C56.9452 193.112 56.6461 193 56.4965 192.925C56.3469 192.85 56.1226 192.7 55.8609 192.513C55.5991 192.326 55.3748 192.139 55.2626 191.951C55.1505 191.764 55.0383 191.539 54.9261 191.24C54.814 190.94 54.7766 190.641 54.7766 190.341C54.7766 189.442 55.1131 188.693 55.8235 188.094C56.5339 187.494 57.4312 187.195 58.5155 187.195C59.3755 187.195 60.1607 187.382 60.8337 187.794C61.5067 188.206 61.9928 188.73 62.3293 189.442L61.1328 190.154C60.7215 189.142 59.8616 188.618 58.5155 188.618C57.8425 188.618 57.3191 188.768 56.8704 189.067C56.4217 189.367 56.1974 189.779 56.1974 190.341L56.2348 190.303Z" fill="white"></path><path d="M69.882 187.157C71.5271 187.157 72.7984 187.719 73.8079 188.88C74.8174 190.004 75.3035 191.352 75.3035 192.925C75.3035 193 75.3035 193.225 75.2661 193.599H65.657C65.8065 194.685 66.2552 195.584 67.0404 196.221C67.8256 196.895 68.7977 197.195 69.9942 197.195C71.6393 197.195 72.8358 196.558 73.5088 195.322L74.78 196.071C74.294 196.858 73.621 197.494 72.7984 197.906C71.9758 198.356 71.0037 198.581 69.9568 198.581C68.2369 198.581 66.8534 198.056 65.7691 196.97C64.6848 195.884 64.1614 194.536 64.1614 192.85C64.1614 191.165 64.6848 189.854 65.7691 188.768C66.816 187.682 68.1995 187.12 69.882 187.12V187.157ZM69.882 188.543C68.7603 188.543 67.7882 188.88 67.0404 189.554C66.2926 190.228 65.8065 191.127 65.657 192.214H73.8079C73.6584 191.052 73.2097 190.154 72.4619 189.517C71.7141 188.88 70.8541 188.543 69.8446 188.543H69.882Z" fill="white"></path><path d="M87.7543 196.521L90.4464 187.457H91.942L88.5769 198.393H87.0065L84.2023 189.554L81.3981 198.393H79.8277L76.4626 187.457H77.9582L80.6503 196.521L83.5293 187.457H84.9875L87.8665 196.521H87.7543Z" fill="white"></path><path d="M96.0174 184.049C96.0174 184.348 95.9052 184.573 95.7183 184.798C95.5313 184.985 95.2696 185.097 94.9705 185.097C94.6714 185.097 94.447 184.985 94.2227 184.798C93.9984 184.61 93.9236 184.348 93.9236 184.049C93.9236 183.749 94.0358 183.524 94.2227 183.3C94.4096 183.075 94.6714 183 94.9705 183C95.2696 183 95.4939 183.112 95.7183 183.3C95.9052 183.487 96.0174 183.749 96.0174 184.049ZM95.6809 198.356H94.2227V187.419H95.6809V198.356Z" fill="white"></path><path d="M103.981 187.157C105.29 187.157 106.337 187.569 107.122 188.356C107.907 189.142 108.281 190.266 108.281 191.614V198.318H106.823V191.614C106.823 190.64 106.561 189.891 106.038 189.33C105.514 188.805 104.804 188.506 103.832 188.506C102.748 188.506 101.888 188.843 101.252 189.517C100.616 190.191 100.317 191.202 100.317 192.55V198.281H98.859V187.419H100.317V189.142C101.14 187.831 102.374 187.157 103.981 187.157Z" fill="white"></path><path d="M120.582 189.554V187.419H122.041V197.944C122.041 199.517 121.517 200.753 120.433 201.652C119.349 202.55 118.077 203 116.582 203C114.039 203 112.319 202.101 111.422 200.341L112.693 199.629C113.366 200.94 114.637 201.614 116.619 201.614C117.853 201.614 118.862 201.277 119.573 200.64C120.283 200.004 120.657 199.105 120.657 197.944V196.221C119.648 197.831 118.189 198.618 116.245 198.618C114.675 198.618 113.366 198.056 112.245 196.97C111.16 195.846 110.599 194.498 110.599 192.888C110.599 191.277 111.16 189.929 112.245 188.805C113.366 187.682 114.675 187.157 116.245 187.157C118.189 187.157 119.648 187.944 120.657 189.554H120.582ZM113.217 195.959C114.039 196.783 115.049 197.195 116.283 197.195C117.516 197.195 118.526 196.783 119.349 195.959C120.171 195.097 120.582 194.086 120.582 192.888C120.582 191.689 120.171 190.64 119.349 189.816C118.526 188.955 117.516 188.543 116.283 188.543C115.049 188.543 114.039 188.955 113.217 189.816C112.394 190.64 111.983 191.689 111.983 192.888C111.983 194.086 112.394 195.097 113.217 195.959Z" fill="white"></path><path d="M142.455 187.157C143.689 187.157 144.699 187.569 145.409 188.356C146.157 189.142 146.531 190.228 146.531 191.539V198.356H145.073V191.539C145.073 190.603 144.848 189.891 144.362 189.367C143.876 188.843 143.241 188.58 142.418 188.58C141.483 188.58 140.735 188.88 140.175 189.517C139.651 190.153 139.352 191.09 139.352 192.326V198.393H137.894V191.577C137.894 190.64 137.67 189.891 137.221 189.367C136.772 188.843 136.137 188.58 135.351 188.58C134.417 188.58 133.669 188.918 133.108 189.554C132.51 190.191 132.211 191.127 132.211 192.326V198.393H130.752V187.419H132.211V189.03C132.996 187.794 134.118 187.157 135.538 187.157C137.109 187.157 138.23 187.831 138.866 189.142C139.651 187.831 140.848 187.157 142.418 187.157H142.455Z" fill="white"></path><path d="M158.869 189.554V187.419H160.328V198.356H158.869V196.221C157.86 197.831 156.402 198.618 154.457 198.618C152.887 198.618 151.578 198.056 150.457 196.97C149.372 195.846 148.812 194.498 148.812 192.888C148.812 191.277 149.372 189.929 150.457 188.805C151.578 187.682 152.887 187.157 154.457 187.157C156.402 187.157 157.86 187.944 158.869 189.554ZM151.504 195.959C152.326 196.783 153.336 197.195 154.57 197.195C155.804 197.195 156.813 196.783 157.636 195.959C158.458 195.097 158.869 194.086 158.869 192.888C158.869 191.689 158.458 190.64 157.636 189.816C156.813 188.955 155.804 188.543 154.57 188.543C153.336 188.543 152.326 188.955 151.504 189.816C150.681 190.64 150.27 191.689 150.27 192.888C150.27 194.086 150.681 195.097 151.504 195.959Z" fill="white"></path><path d="M168.591 198.618C166.946 198.618 165.562 198.056 164.478 196.97C163.394 195.846 162.833 194.498 162.833 192.888C162.833 191.277 163.394 189.929 164.478 188.805C165.562 187.682 166.946 187.157 168.591 187.157C169.675 187.157 170.647 187.419 171.507 187.944C172.367 188.468 173.003 189.18 173.377 190.041L172.18 190.715C171.881 190.079 171.432 189.554 170.759 189.142C170.124 188.768 169.376 188.543 168.553 188.543C167.357 188.543 166.31 188.955 165.487 189.816C164.665 190.64 164.254 191.689 164.254 192.888C164.254 194.086 164.665 195.097 165.487 195.959C166.31 196.783 167.32 197.195 168.553 197.195C169.339 197.195 170.086 197.007 170.722 196.633C171.358 196.258 171.881 195.734 172.255 195.06L173.451 195.771C173.003 196.633 172.33 197.344 171.47 197.831C170.61 198.356 169.638 198.618 168.553 198.618H168.591Z" fill="white"></path><path d="M180.817 187.157C182.126 187.157 183.173 187.569 183.958 188.356C184.743 189.142 185.117 190.266 185.117 191.614V198.318H183.659V191.614C183.659 190.64 183.397 189.891 182.874 189.329C182.35 188.805 181.64 188.506 180.668 188.506C179.583 188.506 178.723 188.843 178.088 189.517C177.452 190.191 177.153 191.202 177.153 192.55V198.281H175.695V183.037H177.153V189.142C177.976 187.831 179.209 187.157 180.817 187.157Z" fill="white"></path><path d="M189.791 184.049C189.791 184.348 189.679 184.573 189.492 184.798C189.305 184.985 189.043 185.097 188.744 185.097C188.445 185.097 188.22 184.985 187.996 184.798C187.772 184.61 187.697 184.348 187.697 184.049C187.697 183.749 187.809 183.524 187.996 183.3C188.183 183.075 188.445 183 188.744 183C189.043 183 189.267 183.112 189.492 183.3C189.679 183.487 189.791 183.749 189.791 184.049ZM189.454 198.356H187.996V187.419H189.454V198.356Z" fill="white"></path><path d="M197.755 187.157C199.063 187.157 200.11 187.569 200.895 188.356C201.681 189.142 202.055 190.266 202.055 191.614V198.318H200.596V191.614C200.596 190.64 200.335 189.891 199.811 189.33C199.288 188.805 198.577 188.506 197.605 188.506C196.521 188.506 195.661 188.843 195.025 189.517C194.39 190.191 194.091 191.202 194.091 192.55V198.281H192.632V187.419H194.091V189.142C194.913 187.831 196.147 187.157 197.755 187.157Z" fill="white"></path><path d="M210.019 187.157C211.664 187.157 212.935 187.719 213.945 188.88C214.954 190.004 215.44 191.352 215.44 192.925C215.44 193 215.44 193.225 215.403 193.599H205.794C205.943 194.685 206.392 195.584 207.177 196.221C207.962 196.895 208.934 197.195 210.131 197.195C211.776 197.195 212.972 196.558 213.645 195.322L214.917 196.071C214.431 196.858 213.758 197.494 212.935 197.906C212.112 198.356 211.14 198.581 210.093 198.581C208.373 198.581 206.99 198.056 205.906 196.97C204.821 195.884 204.298 194.536 204.298 192.85C204.298 191.165 204.821 189.854 205.906 188.768C206.953 187.682 208.336 187.12 210.019 187.12V187.157ZM210.019 188.543C208.897 188.543 207.925 188.88 207.177 189.554C206.429 190.228 205.943 191.127 205.794 192.214H213.945C213.795 191.052 213.346 190.154 212.598 189.517C211.851 188.88 210.991 188.543 209.981 188.543H210.019Z" fill="white"></path></svg>
+      <div class="titles"><h1>Price Parser</h1><div class="sub">ціни Prizzi проти ринку</div></div>
+    </div>
+    <nav class="page-nav" aria-label="Сторінки дашборда">
+      <a href="index.html">Таблиця</a>
+      <a href="trends.html" aria-current="page">Динаміка цін</a>
+    </nav>
+    <button class="help-btn" id="help-btn" type="button" aria-controls="legend-box">? Як користуватися</button>
+    <span class="meta" id="run-meta"></span>
+  </div>
+
+  <section class="legend-box" id="legend-box" aria-label="Як читати динаміку цін" hidden>
+    <div class="legend-head">
+      <span>Як читати динаміку цін</span>
+      <button class="legend-x" type="button" data-legend-close aria-label="Закрити легенду">&times;</button>
+    </div>
+    <div class="legend-body">
+      <div class="legend-col">
+        <div class="legend-h">Що на графіку</div>
+        <div class="legend-line">Одна точка - один день, за часом Каліфорнії (як у календарі таблиці). Береться остання вдала перевірка дня. Якщо сторінка конкурента не відкрилась, цього дня позиція порожня: ціна не вигадується.</div>
+        <div class="legend-line"><span class="lg-line"></span>Товста синя лінія - наша ціна голови зі Shopify. <span class="lg-line thin"></span>Тонкі кольорові - позиції конкурентів, один колір на конкурента. Друга позиція того самого сайту на тій самій моделі йде пунктиром.</div>
+        <div class="legend-line">Лінія ступінчаста: ціна тримається, доки перевірка не покаже нову. Короткий пунктир між точками - були дні без перевірки, ціна вважається незмінною. <span class="lg-dot"></span>Порожня точка - у конкурента на цю дату розпродано.</div>
+        <div class="legend-line">Тонкий пунктир із підписом - собівартість, коли вона потрапляє в діапазон графіка (на графіку ціни).</div>
+        <div class="legend-line">Наведіть курсор на графік (або натисніть ←/→ на клавіатурі): підказка покаже ціну і маржу всіх ліній за цей день.</div>
+        <div class="legend-line">Кружечки над графіком вмикають і вимикають окремі лінії.</div>
+      </div>
+      <div class="legend-col">
+        <div class="legend-h">Перемикачі</div>
+        <div class="legend-line"><b>Ціна / Маржа.</b> Маржа - та сама формула, що в таблиці: (ціна голови - собівартість) / ціна. Для конкурента це маржа, яку ми мали б, продаючи за його ціною («маржа за ринком»).</div>
+        <div class="legend-line"><b>Період.</b> 7, 30, 90 днів, усе або свої дати. Рахується від останнього дня з даними.</div>
+        <div class="legend-line"><b>Конкуренти на графіку.</b> «Дешевші за нас» і «Дорожчі за нас» лишають тих, чия ціна голови на кінець періоду нижча або вища за нашу. «Тільки Prizzi» ховає конкурентів: лишається наша ціна. Картки, таблиця і графік рахуються по тих, що лишилися.</div>
+        <div class="legend-line"><b>Як голова / Як на сайті.</b> Конкуренти продають по-різному: голову, комплект, зібрану машину. «Як голова» перераховує їх на голову так само, як таблиця, щоб ціни можна було порівняти з нашими. «Як на сайті» - ціна, написана на їхній сторінці.</div>
+        <div class="legend-line"><b>Кольори змін.</b> Ціна конкурента впала - червоний (тиск на нас), зросла - зелений. Наші зміни - синім, без оцінки.</div>
+        <div class="legend-line"><b>«Ринок зараз» і маржа за ринком</b> тут рахуються за останніми відомими цінами позицій (не старіші за 14 днів), без розпроданих. Так одна невдала перевірка не робить стрибок на графіку. Таблиця на головній сторінці бере лише перевірки останнього запуску, тому ці цифри можуть трохи відрізнятись. Зміна ринку за період порівнює одні й ті самі позиції на початку і в кінці.</div>
+        <div class="legend-line legend-note">Ціни Prizzi зі Shopify відомі з 2 жовтня 2026: раніше підключення не було, тому до цієї дати нашої ціни на графіку немає. Зірочка (*) біля товару - він ще не зв'язаний зі Shopify, його ціна береться з конфігурації і однакова в усі дні.</div>
+      </div>
+    </div>
+    <div class="legend-foot"><button class="legend-close" type="button" data-legend-close>Закрити</button></div>
+  </section>
+
+  <div class="toolbar" id="toolbar">
+    <div class="fgroup"><span class="flabel">По чому дивитись</span>
+      <div class="pill-group" id="view-tabs" role="group" aria-label="По чому дивитись">
+        <button type="button" data-v="models">По моделях</button><button type="button" data-v="comps">По конкурентах</button>
+      </div></div>
+    <div class="fgroup"><span class="flabel">Що показувати</span>
+      <div class="pill-group" id="metric" role="group" aria-label="Що показувати">
+        <button type="button" data-v="price" title="Ціна голови в доларах">Ціна</button><button type="button" data-v="margin" title="(ціна голови - собівартість) / ціна. Для конкурента: маржа, яку ми мали б за його ціною">Маржа</button>
+      </div></div>
+    <div class="fgroup"><span class="flabel">Період</span>
+      <div class="range-row">
+        <div class="pill-group" id="range" role="group" aria-label="Період">
+          <button type="button" data-v="7">7 днів</button><button type="button" data-v="30">30 днів</button><button type="button" data-v="90">90 днів</button><button type="button" data-v="all">Усе</button>
+        </div>
+        <label class="dates">від <input type="date" id="d-from" aria-label="Початок періоду"></label>
+        <label class="dates">до <input type="date" id="d-to" aria-label="Кінець періоду"></label>
+      </div></div>
+    <div class="fgroup"><span class="flabel">Конкуренти на графіку</span>
+      <div class="pill-group" id="compare" role="group" aria-label="Які конкуренти показувати">
+        <button type="button" data-v="all" title="Усі відстежувані позиції">Усі</button><button type="button" data-v="below" title="Позиції, чия ціна голови на кінець періоду нижча за нашу або така сама">Дешевші за нас</button><button type="button" data-v="above" title="Позиції, чия ціна голови на кінець періоду вища за нашу або така сама">Дорожчі за нас</button><button type="button" data-v="none" title="Сховати конкурентів і дивитись лише нашу ціну">Тільки Prizzi</button>
+      </div></div>
+    <div class="fgroup" id="basis-group"><span class="flabel">Ціна конкурента</span>
+      <div class="pill-group" id="basis" role="group" aria-label="Як рахувати ціну конкурента">
+        <button type="button" data-v="head" title="Перераховано на голову, як у таблиці: можна порівнювати з нашою ціною">Як голова</button><button type="button" data-v="listed" title="Те, що написано на сторінці конкурента (голова, комплект або зібрана машина)">Як на сайті</button>
+      </div></div>
+    <div class="fgroup grow"><label class="flabel" for="q">Пошук</label>
+      <input type="text" id="q" placeholder="Модель або сайт" autocomplete="off"></div>
+  </div>
+  <div class="filter-note" id="filter-note" hidden></div>
+
+  <section class="cards" id="cards" aria-label="Підсумок за період"></section>
+  <div id="view" aria-live="polite"></div>
+  <p class="foot" id="notes"></p>
+</div>
+
+<script>
+'use strict';
+/* Динаміка цін. Читає history/series.json (парсер перебудовує його з SQLite після кожного запуску) і малює графіки сам,
+   без бібліотек. Усі числа періоду (зміни, дельти, маржа) рахуються тут, у файлі лежать тільки щоденні значення. */
+
+// ================= helpers =================
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const safeUrl = u => (typeof u === 'string' && /^https:\/\//.test(u)) ? u : null;
+const sum = a => a.reduce((x, y) => x + y, 0);
+const mean = a => a.length ? sum(a) / a.length : null;
+
+const EPS = 0.005;         // a price counts as changed when it moves by more than half a cent
+const STALE_DAYS = 14;     // a listing nobody read for this long no longer counts as "the market now"
+const DASH = ['', '7 4', '2 3'];
+const MONTH = ['січ', 'лют', 'бер', 'кві', 'тра', 'чер', 'лип', 'сер', 'вер', 'жов', 'лис', 'гру'];
+const MONTH_GEN = ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня', 'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'];
+const WEEKDAY = ['нд', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+const CONFIG_LABEL = { complete_assembled: 'ASS', complete_diy: 'DIY', head_only: 'HEAD' };
+const CONFIG_CLASS = { complete_assembled: 'config-ass', complete_diy: 'config-diy', head_only: 'config-head' };
+const CONFIG_TITLE = { complete_assembled: 'зібрана машина зі столом і мотором', complete_diy: 'комплект зі столом і мотором, збирає покупець', head_only: 'тільки голова' };
+const NONE = '<span class="no-data">—</span>';
+
+const dShort = iso => `${+iso.slice(8, 10)} ${MONTH[+iso.slice(5, 7) - 1]}`;
+const dLong = iso => `${+iso.slice(8, 10)} ${MONTH_GEN[+iso.slice(5, 7) - 1]} ${iso.slice(0, 4)}`;
+const dDow = iso => `${WEEKDAY[new Date(iso + 'T12:00:00Z').getUTCDay()]}, ${dLong(iso)}`;
+const plural = (n, one, few, many) => { const a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : (b >= 2 && b <= 4) ? few : many; };
+
+// Plain hyphen-minus on purpose: a number copied from here pastes into a spreadsheet as a number.
+const money = n => {
+  if (n == null || !isFinite(n)) return '—';
+  const r = Math.round(n * 100) / 100, d = Number.isInteger(r) ? 0 : 2;
+  return (r < 0 ? '-' : '') + '$' + Math.abs(r).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+};
+const sMoney = n => n == null ? '—' : Math.abs(n) < EPS ? '$0' : (n > 0 ? '+' : '-') + money(Math.abs(n));
+const pct = (x, d = 1) => { if (x == null || !isFinite(x)) return '—'; let v = x * 100; if (Math.abs(v) < Math.pow(10, -d) / 2) v = 0; return v.toFixed(d) + '%'; };
+const sPct = (x, d = 1) => { if (x == null || !isFinite(x)) return '—'; const s = pct(x, d); return (x > 0 && s !== (0).toFixed(d) + '%' ? '+' : '') + s; };
+const pts = (x, d = 1) => { if (x == null || !isFinite(x)) return '—'; let v = x * 100; if (Math.abs(v) < Math.pow(10, -d) / 2) v = 0; return (v > 0 ? '+' : '') + v.toFixed(d) + ' п.п.'; };
+const marginOf = (price, cogs) => (price > 0 && cogs > 0) ? (price - cogs) / price : null;
+
+// forward fill: the value "as of" each day (null before the first reading)
+function ffill(a) { let last = null; return a.map(v => (v == null ? last : (last = v))); }
+// index of the latest reading on or before each day (-1 before the first)
+function lastIdx(a) { let k = -1; return a.map((v, i) => (v != null ? (k = i) : k)); }
+function ffillStock(s) { let last = '-', out = ''; for (const ch of s) { if (ch !== '-') last = ch; out += last; } return out; }
+
+// ================= state =================
+const STORE_KEY = 'trends.v1';
+const state = { view: 'models', metric: 'price', range: 30, from: null, to: null, compare: 'all', basis: 'head',
+                q: '', open: new Set(), hidden: {}, sort: { models: ['sales', true], comps: ['moves', true] } };
+const isMargin = () => state.metric === 'margin';
+const basisKey = () => (!isMargin() && state.basis === 'listed') ? 'p' : 'h';
+const ISO = /^\d{4}-\d{2}-\d{2}$/;
+
+function loadState() {
+  try {
+    const s = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+    if (['models', 'comps'].includes(s.view)) state.view = s.view;
+    if (['price', 'margin'].includes(s.metric)) state.metric = s.metric;
+    if ([7, 30, 90, 'all', 'custom'].includes(s.range)) state.range = s.range;
+    if (ISO.test(s.from || '')) state.from = s.from;
+    if (ISO.test(s.to || '')) state.to = s.to;
+    if (['all', 'below', 'above', 'none'].includes(s.compare)) state.compare = s.compare;
+    if (['head', 'listed'].includes(s.basis)) state.basis = s.basis;
+  } catch (e) { /* private window or blocked storage: the defaults are fine */ }
+  if (state.view === 'comps' && state.compare === 'none') state.compare = 'all';
+}
+function saveState() {
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify({ view: state.view, metric: state.metric, range: state.range, from: state.from, to: state.to, compare: state.compare, basis: state.basis }));
+  } catch (e) { /* not worth failing for */ }
+}
+
+// ================= data =================
+let D = null;  // the series, prepared once
+
+function prepare(raw) {
+  const days = raw.days || [];
+  const dayNum = days.map(d => Date.UTC(+d.slice(0, 4), +d.slice(5, 7) - 1, +d.slice(8, 10)) / 86400000);
+  const counts = {};
+  (raw.models || []).forEach(m => m.rows.forEach(r => { counts[r.d] = (counts[r.d] || 0) + 1; }));
+  const domains = Object.keys(counts).sort((a, b) => counts[b] - counts[a] || (a < b ? -1 : 1));
+  const slot = {};
+  domains.forEach((d, i) => { slot[d] = i; });
+  const models = (raw.models || []).map(m => {
+    const seen = {};
+    const mm = Object.assign({}, m, { ownF: ffill(m.own), ownLr: lastIdx(m.own) });
+    mm.rows = m.rows.map(r => {
+      const nth = seen[r.d] = (seen[r.d] == null ? 0 : seen[r.d] + 1);   // 0 for the first listing of this site on the model
+      return Object.assign({}, r, {
+        key: `${m.id}|${r.d}|${r.t}`, model: mm, slot: slot[r.d], nth,
+        ff: { h: ffill(r.h), p: ffill(r.p), s: ffillStock(r.s) },
+        lr: { h: lastIdx(r.h), p: lastIdx(r.p) },
+      });
+    });
+    return mm;
+  });
+  return { raw, n: days.length, days, dayNum, models, domains, slot, ownSince: raw.own_since || null, generated: raw.generated_at || null };
+}
+
+// the period on screen: indexes into D.days
+function windowOf() {
+  const n = D.n;
+  if (!n) return { from: 0, to: -1, empty: true, len: 0 };
+  let from = 0, to = n - 1;
+  if (state.range === 'custom') {
+    const f = state.from || D.days[0], t = state.to || D.days[n - 1];
+    from = D.days.findIndex(d => d >= f);
+    to = -1;
+    for (let i = n - 1; i >= 0; i--) if (D.days[i] <= t) { to = i; break; }
+    if (from < 0 || to < 0 || from > to) return { from: 0, to: -1, empty: true, len: 0 };
+  } else if (state.range !== 'all') {
+    const lo = D.dayNum[n - 1] - (state.range - 1);
+    from = D.dayNum.findIndex(x => x >= lo);
+  }
+  return { from, to, empty: false, len: to - from + 1 };
+}
+
+// ================= the arithmetic of a period =================
+// Looks at one series (readings or null) inside [from, to]: the price changes seen there, the price it started the period
+// with (the last reading before it, else the first inside) and the price it ended with.
+function analyse(vals, from, to) {
+  let prev = null, curIdx = -1;
+  for (let i = from - 1; i >= 0; i--) if (vals[i] != null) { prev = vals[i]; curIdx = i; break; }
+  let cur = prev, first = null, last = null, nRead = 0;
+  const changes = [];
+  for (let i = from; i <= to; i++) {
+    const v = vals[i];
+    if (v == null) continue;
+    nRead++;
+    if (cur != null && Math.abs(v - cur) > EPS) changes.push({ i, pi: curIdx, from: cur, to: v });   // pi: the day of the reading it changed from
+    cur = v; curIdx = i;
+    if (first == null) first = v;
+    last = v;
+  }
+  const start = prev != null ? prev : first, end = last != null ? last : prev;
+  const delta = (start != null && end != null) ? end - start : null;
+  return { changes, nRead, start, end, delta, rel: (delta != null && start) ? delta / start : null };
+}
+
+const changeSeries = r => r[basisKey()];                       // what counts as "the competitor's price" for changes
+const rowVals = r => isMargin() ? r.h.map(h => marginOf(h, r.model.cogs)) : r[basisKey()];   // readings in the metric on screen
+const ownVals = m => isMargin() ? m.own.map(v => marginOf(v, m.cogs)) : m.own;
+const fmtV = v => isMargin() ? pct(v) : money(v);              // a value in the metric on screen
+const fmtD = d => isMargin() ? pts(d) : sMoney(d);             // a change in it
+
+const fresh = (r, i) => { const k = r.lr.h[i]; return k >= 0 && D.dayNum[i] - D.dayNum[k] <= STALE_DAYS; };
+
+// the market at day i: head prices of listings read recently and not sold out (the same idea as "Ринок" in the table)
+function marketAt(rows, i) {
+  const v = [];
+  for (const r of rows) {
+    const h = r.ff.h[i];
+    if (h == null || !fresh(r, i) || r.ff.s[i] === 'o') continue;
+    v.push(h);
+  }
+  return v.length ? { min: Math.min(...v), max: Math.max(...v), n: v.length } : null;
+}
+
+// competitor listing vs our price at the end of the period: below / above / same, or null when either is unknown
+function relation(m, r, win) {
+  const o = m.ownF[win.to], h = r.ff.h[win.to];
+  if (o == null || h == null || !fresh(r, win.to)) return null;
+  const d = h - o;
+  return Math.abs(d) < EPS ? 'same' : d < 0 ? 'below' : 'above';
+}
+function passes(m, r, win) {
+  const c = state.compare;
+  if (c === 'all') return true;
+  if (c === 'none') return false;
+  const rel = relation(m, r, win);
+  return c === 'below' ? (rel === 'below' || rel === 'same') : (rel === 'above' || rel === 'same');
+}
+
+function summarizeModel(m, win) {
+  const rows = m.rows.filter(r => passes(m, r, win));
+  const own = analyse(m.own, win.from, win.to);
+  const comp = rows.map(r => ({ r, an: analyse(changeSeries(r), win.from, win.to) }));
+  const active = comp.filter(c => c.an.nRead > 0);
+  const downs = sum(active.map(c => c.an.changes.filter(x => x.to < x.from).length));
+  const ups = sum(active.map(c => c.an.changes.filter(x => x.to > x.from).length));
+  const rels = active.map(c => c.an.rel).filter(x => x != null);
+  // "the market then vs now" is compared on the listings that were already known at the start: a page that was read for
+  // the first time halfway (its scrape had failed before) would otherwise look like the market getting cheaper
+  const like = rows.filter(r => r.ff.h[win.from] != null);
+  return { m, rows, own, comp, active, downs, ups, moves: downs + ups, avgMove: mean(rels), ownNow: m.ownF[win.to],
+           mkNow: marketAt(rows, win.to), mkStart: marketAt(like, win.from), mkNowLike: marketAt(like, win.to) };
+}
+
+function summarizeCompetitors(win) {
+  const by = new Map();
+  for (const m of D.models) for (const r of m.rows) {
+    if (!passes(m, r, win)) continue;
+    if (!by.has(r.d)) by.set(r.d, []);
+    by.get(r.d).push(r);
+  }
+  const out = [];
+  for (const [dom, rows] of by) {
+    const comp = rows.map(r => ({ r, m: r.model, an: analyse(changeSeries(r), win.from, win.to) }));
+    const active = comp.filter(c => c.an.nRead > 0);
+    const downs = sum(active.map(c => c.an.changes.filter(x => x.to < x.from).length));
+    const ups = sum(active.map(c => c.an.changes.filter(x => x.to > x.from).length));
+    const rels = active.map(c => c.an.rel).filter(x => x != null);
+    let big = null;
+    active.forEach(c => { if (c.an.rel != null && (big == null || Math.abs(c.an.rel) > Math.abs(big.an.rel))) big = c; });
+    // how this competitor sits against us now: average gap of its head prices to our price, or the margin its prices would give us
+    const nowRel = [], nowMargin = [];
+    let soldOut = 0;
+    for (const c of comp) {
+      if (!fresh(c.r, win.to)) continue;
+      if (c.r.ff.s[win.to] === 'o') soldOut++;
+      const h = c.r.ff.h[win.to], o = c.m.ownF[win.to];
+      if (h != null && o) nowRel.push(h / o - 1);
+      const mg = marginOf(h, c.m.cogs);
+      if (mg != null) nowMargin.push(mg);
+    }
+    out.push({ dom, rows, comp, active, downs, ups, moves: downs + ups, avgMove: mean(rels), big,
+               nowRel: mean(nowRel), nowMargin: mean(nowMargin), soldOut });
+  }
+  return out;
+}
+
+// Aggregated lines for a set of listings over the period (one value per day of the window):
+//   price metric  - the average % move since the period started, for the listings and for Prizzi on the same models
+//   margin metric - the average margin at the listings' prices, and Prizzi's average margin on the same models
+function aggregate(rows, win) {
+  const len = win.len;
+  const rowLines = rows.map(r => transformLine(ffill(isMargin() ? r.h : r[basisKey()]), r.model.cogs, win));
+  const models = [...new Set(rows.map(r => r.model))];
+  const ownLines = models.map(m => transformLine(m.ownF, m.cogs, win));
+  const avgOf = lines => Array.from({ length: len }, (_, k) => mean(lines.map(l => l[k]).filter(v => v != null)));
+  return { rowLines, avg: avgOf(rowLines), own: avgOf(ownLines) };
+}
+// a forward-filled price series -> its line in the metric on screen, over the window
+function transformLine(ff, cogs, win) {
+  const out = new Array(win.len).fill(null);
+  if (isMargin()) { for (let k = 0; k < win.len; k++) out[k] = marginOf(ff[win.from + k], cogs); return out; }
+  let base = ff[win.from];
+  if (base == null) for (let i = win.from; i <= win.to; i++) if (ff[i] != null) { base = ff[i]; break; }
+  if (!base) return out;
+  for (let k = 0; k < win.len; k++) { const v = ff[win.from + k]; out[k] = v == null ? null : v / base - 1; }
+  return out;
+}
+const fmtAgg = v => isMargin() ? pct(v) : sPct(v);
+// The smallest span the vertical scale may have: a fixed share of the price (a $24 step on $1,071 must not fill the frame),
+// a few points of margin, a few percent of an index. Without it a nearly flat line is blown up into a cliff.
+const minSpanFor = (top, index) => index ? 0.04 : isMargin() ? 0.06 : Math.abs(top) * 0.10;
+function withMinSpan(lo, hi, span) {
+  if (!(span > 0) || hi - lo >= span) return [lo, hi];
+  const mid = (lo + hi) / 2;
+  return [mid - span / 2, mid + span / 2];
+}
+
+// ================= small pieces of markup =================
+const cfgBadge = t => `<span class="config-badge ${CONFIG_CLASS[t] || ''}" title="${esc(CONFIG_TITLE[t] || t)}">${esc(CONFIG_LABEL[t] || t)}</span>`;
+const stockMark = ch => ch === 'i' ? '<span class="stock-in" title="в наявності">IN</span>' : ch === 'o' ? '<span class="stock-out" title="розпродано">OUT</span>' : '<span class="stock-unk" title="наявність невідома">?</span>';
+const gapSpan = v => v == null ? NONE : `<span class="${v >= 0 ? 'gap-pos' : 'gap-neg'}${Math.abs(v) >= 0.10 ? ' gap-hot' : ''}">${(v >= 0 ? '+' : '-') + Math.abs(v * 100).toFixed(1)}</span>`;
+const moveCls = d => d == null || Math.abs(d) < EPS ? 'price-flat' : d > 0 ? 'price-up' : 'price-down';   // a competitor's move: down is pressure on us
+const sw = ci => `<i class="sw" style="--c:var(--c${ci % 12})"></i>`;
+function movesBadge(downs, ups) {
+  if (!downs && !ups) return '<span class="badge b-none">0</span>';
+  const cls = downs && ups ? 'b-mix' : downs ? 'b-down' : 'b-up';
+  const parts = [];
+  if (downs) parts.push(`▼${downs}`);
+  if (ups) parts.push(`▲${ups}`);
+  return `<span class="badge ${cls}" title="${downs} ${plural(downs, 'зниження', 'зниження', 'знижень')}, ${ups} ${plural(ups, 'підвищення', 'підвищення', 'підвищень')}">${downs + ups}&nbsp; ${parts.join(' ')}</span>`;
+}
+
+// a tiny step line of one or two series over the window; vals are window-length arrays
+function sparkSvg(lines, base) {
+  const W = 120, H = 30, P = 3;
+  let lo = Infinity, hi = -Infinity;
+  lines.forEach(l => l.vals.forEach(v => { if (v != null) { if (v < lo) lo = v; if (v > hi) hi = v; } }));
+  if (base != null) { if (base < lo) lo = base; if (base > hi) hi = base; }
+  if (!isFinite(lo)) return NONE;
+  [lo, hi] = withMinSpan(lo, hi, minSpanFor(hi, base != null));   // a base line means the lines are an index around 0
+  if (hi - lo < 1e-9) { const pad = Math.abs(lo) * 0.05 || 1; lo -= pad; hi += pad; }
+  const len = lines[0].vals.length;
+  const X = k => len === 1 ? W / 2 : P + k * (W - 2 * P) / (len - 1);
+  const Y = v => (H - P - (v - lo) / (hi - lo) * (H - 2 * P)).toFixed(1);
+  let svg = `<svg class="spark" viewBox="0 0 ${W} ${H}" role="img" aria-label="динаміка за період">`;
+  if (base != null) svg += `<line class="l-base" x1="${P}" x2="${W - P}" y1="${Y(base)}" y2="${Y(base)}"/>`;
+  for (const l of lines) {
+    let d = '', prevK = null, prevV = null, endK = null, endV = null;
+    l.vals.forEach((v, k) => {
+      if (v == null) return;
+      d += prevK == null ? `M${X(k).toFixed(1)} ${Y(v)}` : `H${X(k).toFixed(1)}V${Y(v)}`;
+      prevK = k; prevV = v; endK = k; endV = v;
+    });
+    if (!d) continue;
+    if (endK === 0) d += 'h0.1';
+    svg += `<path class="${l.cls}" d="${d}"/>`;
+    svg += `<circle class="${l.cls === 'l-own' ? 'end-own' : 'end-mkt'}" cx="${X(endK).toFixed(1)}" cy="${Y(endV)}" r="2.4"/>`;
+  }
+  return svg + '</svg>';
+}
+
+// ================= cards =================
+function renderCards(win) {
+  let oCh = 0, oUp = 0, oDown = 0, oModels = 0;
+  let cCh = 0, cUp = 0, cDown = 0, cActive = 0;
+  const ownEnd = [], ownDelta = [], mkMin = [], mkMax = [], mkDelta = [];
+  for (const m of D.models) {
+    const own = analyse(m.own, win.from, win.to);
+    if (own.changes.length) oModels++;
+    oCh += own.changes.length;
+    oUp += own.changes.filter(x => x.to > x.from).length;
+    oDown += own.changes.filter(x => x.to < x.from).length;
+    const rows = m.rows.filter(r => passes(m, r, win));
+    for (const r of rows) {
+      const an = analyse(changeSeries(r), win.from, win.to);
+      if (!an.nRead) continue;
+      cActive++;
+      cCh += an.changes.length;
+      cUp += an.changes.filter(x => x.to > x.from).length;
+      cDown += an.changes.filter(x => x.to < x.from).length;
+    }
+    // our margin: now, and how far it moved over the period on the models that have it at both ends
+    const e = marginOf(m.ownF[win.to], m.cogs), st = marginOf(own.start, m.cogs);
+    if (e != null) ownEnd.push(e);
+    if (e != null && st != null) ownDelta.push(e - st);
+    // the market's margin (at the lowest and the highest price in stock), the same way
+    const like = rows.filter(r => r.ff.h[win.from] != null);       // the same listings at both ends (see summarizeModel)
+    const k1 = marketAt(rows, win.to), k0 = marketAt(like, win.from), k1like = marketAt(like, win.to);
+    const a1 = k1 ? marginOf(k1.min, m.cogs) : null, b1 = k1 ? marginOf(k1.max, m.cogs) : null;
+    if (a1 != null && b1 != null) { mkMin.push(a1); mkMax.push(b1); }
+    const a0 = k0 ? marginOf(k0.min, m.cogs) : null, a1l = k1like ? marginOf(k1like.min, m.cogs) : null;
+    if (a0 != null && a1l != null) mkDelta.push(a1l - a0);
+  }
+  const none = state.compare === 'none';
+  const dOwn = ownDelta.length ? mean(ownDelta) : null, dMk = mkDelta.length ? mean(mkDelta) : null;
+  const dCls = d => d == null || Math.abs(d) < 0.0005 ? 'price-flat' : d > 0 ? 'price-up' : 'price-down';
+  $('#cards').innerHTML =
+    `<div class="card" title="Скільки разів ми міняли ціну голови за період (за даними Shopify)"><div class="label">Наші зміни цін</div><div class="value">${oCh}</div>`
+    + `<div class="sub">${oCh ? `<span class="own-move">\u25B2 ${oUp}</span> підвищень, <span class="own-move">\u25BC ${oDown}</span> знижень на ${oModels} ${plural(oModels, 'моделі', 'моделях', 'моделях')}` : 'за період ціни Prizzi не мінялись'}</div></div>`
+    + `<div class="card" title="Скільки разів конкуренти міняли ціну за період. Знизили - це тиск на нас"><div class="label">Зміни цін у конкурентів</div><div class="value">${none ? '\u2014' : cCh}</div>`
+    + `<div class="sub">${none ? 'конкурентів приховано фільтром' : `<span class="price-down">\u25BC ${cDown}</span> знизили, <span class="price-up">\u25B2 ${cUp}</span> підвищили, ${cActive} ${plural(cActive, 'позиція', 'позиції', 'позицій')} із даними`}</div></div>`
+    + `<div class="card" title="(наша ціна голови - собівартість) / наша ціна, середнє по моделях, де є і наша ціна, і собівартість"><div class="label">Маржа Prizzi</div><div class="value">${ownEnd.length ? pct(mean(ownEnd)) : '\u2014'}</div>`
+    + `<div class="sub">${ownEnd.length ? `за період: <span class="${dCls(dOwn)}">${pts(dOwn)}</span>, ` : 'немає цін зі Shopify, '}${ownEnd.length} ${plural(ownEnd.length, 'модель', 'моделі', 'моделей')}</div></div>`
+    + `<div class="card" title="Та сама формула, але за найнижчою і найвищою ціною голови, яку мають конкуренти в наявності. Ціни тут - останні відомі по кожній позиції (до 14 днів), тому цифра може трохи відрізнятись від головної таблиці"><div class="label">Маржа за ринком</div><div class="value">${mkMin.length ? pct(mean(mkMin)) + ' \u2013 ' + pct(mean(mkMax)) : '\u2014'}</div>`
+    + `<div class="sub">${mkMin.length ? `нижня межа за період: <span class="${dCls(dMk)}">${pts(dMk)}</span>` : none ? 'конкурентів приховано фільтром' : 'немає цін конкурентів у наявності'}</div></div>`;
+}
+
+// ================= tables =================
+function sortList(list, keyFns, key) {
+  const [col, desc] = state.sort[key], f = keyFns[col];
+  if (!f) return list;
+  return list.sort((a, b) => {
+    const x = f(a), y = f(b);
+    if (x == null && y == null) return 0;
+    if (x == null) return 1;        // empty values go last whichever way it is sorted
+    if (y == null) return -1;
+    const c = typeof x === 'string' ? x.localeCompare(y, 'uk') : x - y;
+    return desc ? -c : c;
+  });
+}
+function thHtml(cols, key) {
+  const [col, desc] = state.sort[key];
+  return cols.map(c => `<th data-col="${c.k}" class="${c.num ? 'num ' : ''}${c.k === col ? 'sorted' + (desc ? ' desc' : '') : ''}${c.nosort ? ' nosort' : ''}"${c.tip ? ` title="${esc(c.tip)}"` : ''}>${c.t}</th>`).join('');
+}
+
+const MODEL_COLS = [
+  { k: 'tog', t: '', nosort: true },
+  { k: 'name', t: 'Модель' },
+  { k: 'sales', t: 'Продано 2026', num: true, tip: 'Скільки штук продано на Shopify у 2026 році' },
+  { k: 'own', t: 'Prizzi зараз', num: true, tip: 'Наша ціна голови (або маржа) на кінець періоду' },
+  { k: 'ownd', t: 'Prizzi за період', num: true, tip: 'Як змінилась наша ціна (маржа) за період' },
+  { k: 'mkt', t: 'Ринок зараз', num: true, tip: 'Найнижча і найвища ціна голови (або маржа за цими цінами) серед конкурентів у наявності' },
+  { k: 'mktd', t: 'Ринок за період', num: true, tip: 'Як змінилась нижня межа ринку (найнижча ціна голови у наявності)' },
+  { k: 'moves', t: 'Зміни у конкурентів', num: true, tip: 'Скільки разів конкуренти міняли ціну за період' },
+  { k: 'spark', t: 'Динаміка', nosort: true, tip: 'Наша лінія (синя) і нижня межа ринку (помаранчева) за період' },
+];
+
+function renderModels(win) {
+  const q = state.q.trim().toLowerCase();
+  let list = D.models.map(m => summarizeModel(m, win));
+  if (q) list = list.filter(s => (s.m.name + ' ' + s.m.id + ' ' + s.rows.map(r => r.d).join(' ')).toLowerCase().includes(q));
+  const mg = isMargin();
+  const keyFns = {
+    name: s => s.m.name, sales: s => s.m.sales,
+    own: s => mg ? marginOf(s.ownNow, s.m.cogs) : s.ownNow,
+    ownd: s => s.own.delta == null ? null : mg ? deltaMargin(s.m, s.own) : s.own.delta,
+    mkt: s => s.mkNow ? (mg ? marginOf(s.mkNow.min, s.m.cogs) : s.mkNow.min) : null,
+    mktd: s => mktDelta(s),
+    moves: s => s.moves,
+  };
+  sortList(list, keyFns, 'models');
+  let html = '<div class="table-wrap"><div class="table-scroll"><table class="tt"><thead><tr>' + thHtml(MODEL_COLS, 'models') + '</tr></thead><tbody>';
+  if (!list.length) html += `<tr><td colspan="${MODEL_COLS.length}" class="no-data" style="padding:24px;text-align:center">Нічого не знайдено</td></tr>`;
+  for (const s of list) {
+    const m = s.m, key = 'm:' + m.id, open = state.open.has(key);
+    const star = m.own_src === 'config' ? ' <span class="star" title="Ціна з конфігурації: товар ще не зв’язаний зі Shopify, тому вона однакова в усі дні">*</span>' : '';
+    const ownNow = mg ? marginOf(s.ownNow, m.cogs) : s.ownNow;
+    html += `<tr class="mrow${open ? ' open' : ''}" data-key="${esc(key)}" tabindex="0" aria-expanded="${open}">`
+      + `<td class="tog">${open ? '▾' : '▸'}</td>`
+      + `<td class="name" title="${esc(m.name)}">${esc(m.name)}</td>`
+      + `<td class="num">${m.sales == null ? NONE : m.sales}</td>`
+      + `<td class="num">${ownNow == null ? NONE : fmtV(ownNow)}${star}</td>`
+      + `<td class="num">${ownDeltaCell(s)}</td>`
+      + `<td class="num">${marketCell(s)}</td>`
+      + `<td class="num">${marketDeltaCell(s)}</td>`
+      + `<td class="num">${state.compare === 'none' ? NONE : movesBadge(s.downs, s.ups)}</td>`
+      + `<td class="spark-cell">${modelSpark(s, win)}</td></tr>`;
+    if (open) html += modelDetail(s, win);
+  }
+  html += '</tbody></table></div></div>';
+  $('#view').innerHTML = html;
+  fitDetails();
+  $$('#view .chart-wrap').forEach(host => {
+    const s = list.find(x => 'm:' + x.m.id === host.dataset.chart);
+    if (s) drawChart(host, modelChartSpec(s, win));
+  });
+}
+
+// A table wider than the screen scrolls sideways; the opened row must not scroll away with it. Its content is held to the
+// visible width (sticky at the left edge), and the charts are drawn at that width.
+function fitDetails() {
+  const sc = $('#view .table-scroll');
+  if (sc) sc.style.setProperty('--scroll-w', sc.clientWidth + 'px');
+}
+
+function deltaMargin(m, an) {                       // our margin at the end of the period minus at its start
+  const a = marginOf(an.start, m.cogs), b = marginOf(an.end, m.cogs);
+  return a == null || b == null ? null : b - a;
+}
+function ownDeltaCell(s) {
+  const an = s.own;
+  if (an.delta == null) return NONE;
+  if (Math.abs(an.delta) < EPS) return '<span class="price-flat">без змін</span>';
+  if (isMargin()) { const d = deltaMargin(s.m, an); return d == null ? NONE : `<span class="own-move">${pts(d)}</span>`; }
+  return `<span class="own-move">${sMoney(an.delta)}</span> <span class="dim">${sPct(an.rel)}</span>`;
+}
+function marketCell(s) {
+  const mk = s.mkNow;
+  if (!mk) return `<span class="no-data" title="${state.compare === 'none' ? 'Конкурентів приховано фільтром' : 'Немає цін конкурентів у наявності'}">—</span>`;
+  const lo = isMargin() ? marginOf(mk.min, s.m.cogs) : mk.min, hi = isMargin() ? marginOf(mk.max, s.m.cogs) : mk.max;
+  const txt = lo == null ? '—' : (hi != null && mk.max > mk.min ? fmtV(lo) + ' – ' + fmtV(hi) : fmtV(lo));
+  return `<span title="${mk.n} ${plural(mk.n, 'ціна', 'ціни', 'цін')} у наявності">${txt}</span>`;
+}
+function mktDelta(s) {
+  if (!s.mkNowLike || !s.mkStart) return null;
+  if (!isMargin()) return s.mkNowLike.min - s.mkStart.min;
+  const a = marginOf(s.mkNowLike.min, s.m.cogs), b = marginOf(s.mkStart.min, s.m.cogs);
+  return a == null || b == null ? null : a - b;
+}
+function marketDeltaCell(s) {
+  const d = mktDelta(s);
+  if (d == null) return NONE;
+  if (Math.abs(d) < (isMargin() ? 0.0005 : EPS)) return '<span class="price-flat">без змін</span>';
+  return `<span class="${d > 0 ? 'price-up' : 'price-down'}">${fmtD(d)}</span>`;
+}
+function modelSpark(s, win) {
+  const m = s.m;
+  const own = (isMargin() ? ffill(ownVals(m)) : m.ownF).slice(win.from, win.to + 1);
+  const lines = [{ vals: own, cls: 'l-own' }];
+  if (state.compare !== 'none') {
+    const mk = Array.from({ length: win.len }, (_, k) => { const x = marketAt(s.rows, win.from + k); return x ? (isMargin() ? marginOf(x.min, m.cogs) : x.min) : null; });
+    lines.push({ vals: mk, cls: 'l-mkt' });
+  }
+  return sparkSvg(lines);
+}
+
+// ----- the opened model -----
+function modelSeries(s, win) {
+  const m = s.m, out = [];
+  const cfg = m.own_src === 'config';
+  out.push({ id: 'own', label: cfg ? 'Prizzi (конфіг)' : 'Prizzi', color: 'var(--accent)', w: 3, dash: cfg ? '2 4' : '', vals: ownVals(m), hp: m.own, own: true, ci: -1 });
+  for (const r of s.rows) {
+    out.push({ id: r.key, label: r.d, badge: r.t, color: `var(--c${r.slot % 12})`, w: 1.9, dash: DASH[r.nth % 3], vals: rowVals(r), hp: r.h, stock: r.s, seller: r.v || null, ci: r.slot, row: r });
+  }
+  return out;
+}
+function modelChartSpec(s, win) {
+  const m = s.m;
+  const spec = { win, series: modelSeries(s, win), hidden: state.hidden['m:' + m.id] || new Set(), cogs: m.cogs, kind: 'readings', fmt: fmtV, tick: isMargin() ? (v, st) => pct(v, st < 0.01 ? 1 : 0) : tickMoney,
+                 note: isMargin() && !m.cogs ? 'Для цієї моделі в конфігурації немає собівартості: маржу порахувати не можна.' : null, label: m.name };
+  if (!isMargin() && m.cogs) spec.ref = { v: m.cogs, label: 'собівартість ' + money(m.cogs) };
+  if (isMargin()) spec.zero = true;
+  return spec;
+}
+function tickMoney(v, step) { return money(step < 1 ? Math.round(v * 100) / 100 : Math.round(v)); }
+
+function modelDetail(s, win) {
+  const m = s.m, mg = isMargin();
+  const url = safeUrl(m.url);
+  const nowOwn = s.ownNow, startOwn = s.own.start;
+  const nowM = marginOf(nowOwn, m.cogs), startM = marginOf(startOwn, m.cogs);
+  const mkN = s.mkNow, mkS = s.mkStart;
+  const mkMargin = mk => mk ? [marginOf(mk.min, m.cogs), marginOf(mk.max, m.cogs)] : null;
+  const mN = mkMargin(mkN), mS = mkMargin(mkS);
+  const rangeTxt = (mk, mgn) => !mk ? '—' : (mg ? (mgn[0] == null ? '—' : pct(mgn[0]) + (mk.max > mk.min ? ' – ' + pct(mgn[1]) : '')) : money(mk.min) + (mk.max > mk.min ? ' – ' + money(mk.max) : ''));
+  const otherTxt = (mk, mgn) => !mk ? '' : (mg ? money(mk.min) + (mk.max > mk.min ? ' – ' + money(mk.max) : '') : (mgn[0] == null ? '' : 'маржа ' + pct(mgn[0]) + (mk.max > mk.min ? ' – ' + pct(mgn[1]) : '')));
+  const gapMin = nowM != null && mN && mN[0] != null ? mN[0] - nowM : null;
+  const gapMax = nowM != null && mN && mN[1] != null ? mN[1] - nowM : null;
+  const ownMain = mg ? (nowM == null ? '—' : pct(nowM)) : (nowOwn == null ? '—' : money(nowOwn));
+  const ownSecond = mg ? (nowOwn == null ? '' : 'ціна голови ' + money(nowOwn)) : (nowM == null ? '' : 'маржа ' + pct(nowM));
+  const ownWas = startOwn == null ? '' : `На початку періоду: ${mg ? pct(startM) : money(startOwn)}${mg ? ` (${money(startOwn)})` : startM != null ? ` (маржа ${pct(startM)})` : ''}`;
+  const stats = `<div class="stats">`
+    + `<div class="stat"><div class="s-label">Prizzi зараз${m.own_src === 'config' ? ' *' : ''}</div><div class="s-main">${ownMain}</div><div class="s-second">${esc(ownSecond)}</div><div class="s-sub">${esc(ownWas) || (m.own_src === 'shopify' ? 'Ціна Shopify відома з ' + (D.ownSince ? dLong(D.ownSince) : '—') : '')}</div></div>`
+    + `<div class="stat"><div class="s-label">Ринок зараз (у наявності)</div><div class="s-main">${esc(rangeTxt(mkN, mN))}</div><div class="s-second">${esc(otherTxt(mkN, mN))}</div><div class="s-sub">${mkN ? `${mkN.n} ${plural(mkN.n, 'ціна', 'ціни', 'цін')}. Ті самі позиції на початку періоду: ${esc(mkS ? rangeTxt(mkS, mS) : '\u2014')}` : (state.compare === 'none' ? 'Конкурентів приховано фільтром' : 'Немає цін конкурентів у наявності')}</div></div>`
+    + `<div class="stat"><div class="s-label">До ринку, п.п. маржі</div><div class="s-main">${gapMin == null ? NONE : gapSpan(gapMin) + '<span class="gap-sep">/</span>' + gapSpan(gapMax)}</div><div class="s-sub">Різниця маржі ринку і нашої: до найнижчої ціни / до найвищої. Мінус: зрівнятись із найдешевшим коштувало б стільки пунктів.</div></div>`
+    + `</div>`;
+  const hidden = state.hidden['m:' + m.id] || new Set();
+  const chips = modelSeries(s, win).map(se => chipHtml('m:' + m.id, se, hidden, win)).join('');
+  const note = state.compare === 'none' ? '<span class="d-note">Конкурентів приховано: показана лише наша ціна.</span>' : (s.rows.length ? '' : '<span class="d-note">Немає позицій конкурентів, що підходять під фільтр.</span>');
+  return `<tr class="detail-row"><td colspan="${MODEL_COLS.length}"><div class="detail-content">`
+    + `<div class="d-head"><span class="d-title">${esc(m.name)}</span>${url ? `<a class="d-link" href="${esc(url)}" target="_blank" rel="noopener noreferrer">на сайті Prizzi ↗</a>` : ''}${note}</div>`
+    + stats
+    + `<div class="chips" role="group" aria-label="Лінії на графіку">${chips}</div>`
+    + `<div class="chart-wrap" data-chart="m:${esc(m.id)}"></div>`
+    + `<h4 class="d-sub">Що змінилось за період</h4>${eventsHtml(modelEvents(s, win))}`
+    + `</div></td></tr>`;
+}
+
+function chipHtml(chartKey, se, hidden, win) {
+  const on = !hidden.has(se.id);
+  const lastV = lastValue(se, win);
+  const color = se.own ? 'var(--accent)' : `var(--c${se.ci % 12})`;
+  return `<button type="button" class="chip" aria-pressed="${on}" data-chart="${esc(chartKey)}" data-series="${esc(se.id)}" style="--c:${color}" title="${on ? 'Сховати лінію' : 'Показати лінію'}">`
+    + `<i class="sw"></i><span class="lbl">${esc(se.label)}</span>${se.badge ? cfgBadge(se.badge) : ''}${lastV == null ? '' : `<span class="val">${esc(se.fmt ? se.fmt(lastV) : fmtV(lastV))}</span>`}</button>`;
+}
+function lastValue(se, win) {
+  for (let i = win.to; i >= win.from; i--) if (se.vals[i] != null) return se.vals[i];
+  return null;
+}
+
+// ----- events -----
+function modelEvents(s, win) {
+  const m = s.m, ev = [];
+  const mkMargin = p => marginOf(p, m.cogs);
+  for (const c of analyse(m.own, win.from, win.to).changes) ev.push({ i: c.i, who: { own: true }, kind: 'price', from: c.from, to: c.to, fromM: mkMargin(c.from), toM: mkMargin(c.to) });
+  for (const { r } of s.comp) {
+    const an = analyse(changeSeries(r), win.from, win.to);
+    for (const c of an.changes) ev.push({ i: c.i, who: { r }, kind: 'price', from: c.from, to: c.to, fromM: mkMargin(r.h[c.pi]), toM: mkMargin(r.h[c.i]) });
+    ev.push(...stockEvents(r, win));
+  }
+  return ev;
+}
+function stockEvents(r, win) {
+  const out = [];
+  let prev = '-';
+  for (let i = win.from - 1; i >= 0; i--) if (r.s[i] !== '-') { prev = r.s[i]; break; }
+  for (let i = win.from; i <= win.to; i++) {
+    const ch = r.s[i];
+    if (ch === '-') continue;
+    if ((prev === 'o') !== (ch === 'o') && prev !== '-') out.push({ i, who: { r }, kind: 'stock', out: ch === 'o' });
+    prev = ch;
+  }
+  return out;
+}
+function eventsHtml(ev) {
+  if (!ev.length) return '<div class="no-data">За цей період змін цін не було.</div>';
+  ev.sort((a, b) => b.i - a.i || (a.who.own ? -1 : 1));
+  const mg = isMargin(), shown = ev.slice(0, 150);
+  let html = '<div class="ev-wrap"><table class="ev"><thead><tr><th>Дата</th><th>Хто</th><th>Що сталося</th><th class="num">Було</th><th class="num">Стало</th><th class="num">Зміна</th></tr></thead><tbody>';
+  for (const e of shown) {
+    const who = e.who.own ? '<span class="who own">Prizzi</span>'
+      : state.view === 'comps' ? `<span class="who">${esc(e.who.r.model.name)} ${cfgBadge(e.who.r.t)}</span>`
+      : `<span class="who">${sw(e.who.r.slot)}${esc(e.who.r.d)} ${cfgBadge(e.who.r.t)}</span>`;
+    if (e.kind === 'stock') {
+      html += `<tr><td>${esc(dShort(D.days[e.i]))}</td><td>${who}</td><td colspan="4" class="${e.out ? 'price-down' : 'price-up'}">${e.out ? 'розпродано' : 'знову в наявності'}</td></tr>`;
+      continue;
+    }
+    const d = e.to - e.from, cls = e.who.own ? 'own-move' : moveCls(d);
+    const main = (v, vm) => mg ? pct(vm) : money(v), second = (v, vm) => mg ? (v == null ? '' : money(v)) : (vm == null ? '' : 'маржа ' + pct(vm));
+    const dm = mg ? (e.toM != null && e.fromM != null ? e.toM - e.fromM : null) : d;
+    html += `<tr><td>${esc(dShort(D.days[e.i]))}</td><td>${who}</td><td>${d < 0 ? 'ціна знизилась' : 'ціна зросла'}</td>`
+      + `<td class="num">${main(e.from, e.fromM)} <span class="dim">${esc(second(e.from, e.fromM))}</span></td>`
+      + `<td class="num">${main(e.to, e.toM)} <span class="dim">${esc(second(e.to, e.toM))}</span></td>`
+      + `<td class="num ${cls}">${mg ? pts(dm) : sMoney(d)} <span class="dim">${mg ? '' : sPct(d / e.from)}</span></td></tr>`;
+  }
+  html += '</tbody></table></div>';
+  if (ev.length > shown.length) html += `<div class="d-note" style="margin-top:6px">Показано ${shown.length} найновіших із ${ev.length}.</div>`;
+  return html;
+}
+
+// ================= competitors =================
+const COMP_COLS = [
+  { k: 'tog', t: '', nosort: true },
+  { k: 'dom', t: 'Конкурент' },
+  { k: 'rows', t: 'Позицій', num: true, tip: 'Скільки позицій цього сайту мали перевірки за період, із скількох відстежуваних' },
+  { k: 'moves', t: 'Змін цін', num: true, tip: 'Скільки разів цей конкурент міняв ціну за період (▼ знизив, ▲ підвищив)' },
+  { k: 'avg', t: 'Середній рух', num: true, tip: 'Середня зміна ціни по його позиціях за період, у відсотках' },
+  { k: 'big', t: 'Найбільший рух', num: true, tip: 'Позиція, де ціна змінилась найсильніше за період' },
+  { k: 'rel', t: 'Відносно нас', num: true, tip: 'Ціна: на скільки відсотків його ціна голови в середньому вища (+) або нижча (-) за нашу. Маржа: яку маржу ми мали б за його цінами' },
+  { k: 'out', t: 'Розпродано', num: true, tip: 'Скільки його позицій зараз розпродано' },
+  { k: 'spark', t: 'Динаміка', nosort: true, tip: 'Ціна: середній рух його позицій (помаранчева) і наших цін на тих самих моделях (синя). Маржа: середня маржа за його цінами і наша' },
+];
+
+function renderComps(win) {
+  const q = state.q.trim().toLowerCase();
+  let list = summarizeCompetitors(win);
+  if (q) list = list.filter(s => s.dom.toLowerCase().includes(q) || s.rows.some(r => r.model.name.toLowerCase().includes(q)));
+  const mg = isMargin();
+  sortList(list, {
+    dom: s => s.dom, rows: s => s.active.length, moves: s => s.moves, avg: s => s.avgMove,
+    big: s => s.big ? Math.abs(s.big.an.rel) : null, rel: s => mg ? s.nowMargin : s.nowRel, out: s => s.soldOut,
+  }, 'comps');
+  let html = '<div class="table-wrap"><div class="table-scroll"><table class="tt"><thead><tr>' + thHtml(COMP_COLS, 'comps') + '</tr></thead><tbody>';
+  if (!list.length) html += `<tr><td colspan="${COMP_COLS.length}" class="no-data" style="padding:24px;text-align:center">Нічого не знайдено</td></tr>`;
+  for (const s of list) {
+    const key = 'c:' + s.dom, open = state.open.has(key);
+    const slot = D.slot[s.dom] || 0;
+    html += `<tr class="mrow${open ? ' open' : ''}" data-key="${esc(key)}" tabindex="0" aria-expanded="${open}">`
+      + `<td class="tog">${open ? '▾' : '▸'}</td>`
+      + `<td class="name"><span class="who">${sw(slot)}${esc(s.dom)}</span></td>`
+      + `<td class="num" title="${s.rows.length} відстежуваних">${s.active.length} <span class="dim">з ${s.rows.length}</span></td>`
+      + `<td class="num">${movesBadge(s.downs, s.ups)}</td>`
+      + `<td class="num">${s.avgMove == null ? NONE : `<span class="${moveCls(s.avgMove)}">${sPct(s.avgMove)}</span>`}</td>`
+      + `<td class="num">${bigCell(s)}</td>`
+      + `<td class="num">${relCell(s)}</td>`
+      + `<td class="num">${s.soldOut ? `<span class="stock-out">${s.soldOut}</span>` : '<span class="price-flat">0</span>'}</td>`
+      + `<td class="spark-cell">${compSpark(s, win)}</td></tr>`;
+    if (open) html += compDetail(s, win);
+  }
+  html += '</tbody></table></div></div>';
+  $('#view').innerHTML = html;
+  fitDetails();
+  $$('#view .chart-wrap').forEach(host => {
+    const s = list.find(x => 'c:' + x.dom === host.dataset.chart);
+    if (s) drawChart(host, compChartSpec(s, win));
+  });
+}
+function bigCell(s) {
+  if (!s.big || Math.abs(s.big.an.rel) < 1e-6) return '<span class="price-flat">без змін</span>';
+  return `<span class="${moveCls(s.big.an.rel)}">${sPct(s.big.an.rel)}</span> <span class="sub-note">${esc(s.big.m.name)}</span>`;
+}
+function relCell(s) {
+  if (isMargin()) return s.nowMargin == null ? NONE : pct(s.nowMargin);
+  if (s.nowRel == null) return NONE;
+  // cheaper than us (negative) is pressure on us, so it is the red one
+  return `<span class="${s.nowRel < 0 ? 'price-down' : s.nowRel > 0 ? 'price-up' : 'price-flat'}">${sPct(s.nowRel)}</span>`;
+}
+function compSpark(s, win) {
+  const agg = aggregate(s.rows, win);
+  return sparkSvg([{ vals: agg.own, cls: 'l-own' }, { vals: agg.avg, cls: 'l-mkt' }], isMargin() ? null : 0);
+}
+function compChartSpec(s, win) {
+  const agg = aggregate(s.rows, win), slot = D.slot[s.dom] || 0, hidden = state.hidden['c:' + s.dom] || new Set();
+  const full = a => { const out = new Array(D.n).fill(null); a.forEach((v, k) => { out[win.from + k] = v; }); return out; };   // window-length -> day-indexed
+  const series = [
+    { id: 'own', label: 'Prizzi (ті самі моделі)', color: 'var(--accent)', w: 3, dash: '', vals: full(agg.own), own: true, derived: true, ci: -1, fmt: fmtAgg },
+    { id: 'avg', label: s.dom + ' (середнє)', color: `var(--c${slot % 12})`, w: 3, dash: '', vals: full(agg.avg), derived: true, ci: slot, fmt: fmtAgg },
+  ];
+  s.rows.forEach((r, k) => series.push({ id: 'row:' + r.key, label: r.model.name, badge: r.t, color: `var(--c${slot % 12})`, w: 1.2, dash: '', faint: true, vals: full(agg.rowLines[k]), derived: true, ci: slot, row: r, group: 'rows', fmt: fmtAgg }));
+  return { win, series, hidden, kind: 'derived', fmt: fmtAgg, tick: isMargin() ? (v, st) => pct(v, st < 0.01 ? 1 : 0) : (v, st) => sPct(v, st < 0.01 ? 1 : 0), zero: !isMargin(), cogs: null,
+           note: null, label: s.dom };
+}
+function compDetail(s, win) {
+  const hidden = state.hidden['c:' + s.dom] || new Set();
+  const spec = compChartSpec(s, win);
+  const own = spec.series.filter(x => !x.group), rows = spec.series.filter(x => x.group);
+  const rowsOn = rows.some(x => !hidden.has(x.id));
+  const chips = own.map(se => chipHtml('c:' + s.dom, se, hidden, win)).join('')
+    + `<button type="button" class="chip" aria-pressed="${rowsOn}" data-chart="c:${esc(s.dom)}" data-group="rows" data-ids="${esc(JSON.stringify(rows.map(x => x.id)))}" style="--c:var(--c${(D.slot[s.dom] || 0) % 12})" title="Показати або сховати тонкі лінії окремих позицій"><i class="sw"></i><span class="lbl">окремі позиції (${rows.length})</span></button>`;
+  const mg = isMargin();
+  let listing = '<div class="ev-wrap"><table class="ev"><thead><tr><th>Модель</th><th>Комплектація</th><th class="num">' + (mg ? 'Маржа за його ціною' : 'Ціна зараз') + '</th><th class="num">До нашої ціни</th><th class="num">За період</th><th>Остання зміна</th><th>Наявність</th><th>Динаміка</th><th></th></tr></thead><tbody>';
+  const sorted = s.comp.slice().sort((a, b) => (b.an.changes.length - a.an.changes.length) || a.m.name.localeCompare(b.m.name, 'uk'));
+  for (const c of sorted) {
+    const r = c.r, m = c.m, i = win.to;
+    const nowV = mg ? marginOf(r.ff.h[i], m.cogs) : r.ff[basisKey()][i];
+    const h = r.ff.h[i], o = m.ownF[i];
+    const rel = (h != null && o) ? h / o - 1 : null;
+    const last = c.an.changes.length ? c.an.changes[c.an.changes.length - 1] : null;
+    const spark = sparkSvg([{ vals: ffill(changeSeries(r)).slice(win.from, win.to + 1), cls: 'l-mkt' }]);
+    const url = safeUrl(r.u);
+    listing += `<tr><td class="name">${esc(m.name)}</td><td>${cfgBadge(r.t)}</td>`
+      + `<td class="num">${nowV == null ? NONE : fmtV(nowV)}${fresh(r, i) ? '' : ' <span class="dim" title="Давно не перевірялась">(стара)</span>'}</td>`
+      + `<td class="num">${rel == null ? NONE : `<span class="${rel < 0 ? 'price-down' : rel > 0 ? 'price-up' : 'price-flat'}">${sPct(rel)}</span>`}</td>`
+      + `<td class="num">${c.an.nRead === 0 ? NONE : (c.an.delta == null || Math.abs(c.an.delta) < EPS) ? '<span class="price-flat">без змін</span>' : `<span class="${moveCls(c.an.delta)}">${sMoney(c.an.delta)}</span> <span class="dim">${sPct(c.an.rel)}</span>`}</td>`
+      + `<td>${last ? esc(dShort(D.days[last.i])) : NONE}</td>`
+      + `<td>${stockMark(r.ff.s[i])}</td><td class="spark-cell">${spark}</td>`
+      + `<td>${url ? `<a class="d-link" href="${esc(url)}" target="_blank" rel="noopener noreferrer" title="Відкрити сторінку конкурента">↗</a>` : ''}</td></tr>`;
+  }
+  listing += '</tbody></table></div>';
+  const events = [];
+  for (const c of s.comp) {
+    const m = c.m;
+    for (const ch of c.an.changes) events.push({ i: ch.i, who: { r: c.r }, kind: 'price', from: ch.from, to: ch.to, fromM: marginOf(c.r.h[ch.pi], m.cogs), toM: marginOf(c.r.h[ch.i], m.cogs) });
+    events.push(...stockEvents(c.r, win));
+  }
+  const noRows = !s.rows.length;
+  return `<tr class="detail-row"><td colspan="${COMP_COLS.length}"><div class="detail-content">`
+    + `<div class="d-head"><span class="d-title">${esc(s.dom)}</span><span class="d-note">${mg ? 'Лінії: маржа, яку ми мали б за цінами цього сайту, і наша маржа на тих самих моделях.' : 'Лінії: середня зміна цін цього сайту від початку періоду і наших цін на тих самих моделях. 0% - рівень на початок періоду.'}</span></div>`
+    + `<div class="chips" role="group" aria-label="Лінії на графіку">${chips}</div>`
+    + `<div class="chart-wrap" data-chart="c:${esc(s.dom)}"></div>`
+    + `<h4 class="d-sub">Позиції</h4>${noRows ? '<div class="no-data">Немає позицій.</div>' : listing}`
+    + `<h4 class="d-sub">Що змінилось за період</h4>${eventsHtml(events)}`
+    + `</div></td></tr>`;
+}
+
+// ================= the chart =================
+function niceTicks(lo, hi, target) {
+  if (!(hi > lo)) { const pad = Math.abs(lo) * 0.05 || 1; lo -= pad; hi += pad; }
+  const raw = (hi - lo) / target, mag = Math.pow(10, Math.floor(Math.log10(raw))), norm = raw / mag;
+  const step = (norm < 1.5 ? 1 : norm < 3 ? 2 : norm < 7 ? 5 : 10) * mag;
+  const start = Math.floor(lo / step + 1e-9) * step, end = Math.ceil(hi / step - 1e-9) * step;
+  const ticks = [];
+  for (let v = start; v <= end + step / 2; v += step) ticks.push(Math.round(v / step) * step);
+  return { ticks, step };
+}
+
+function drawChart(host, spec) {
+  const { from, to } = spec.win;
+  const W = Math.max(300, Math.floor(host.clientWidth || 640)), H = W < 560 ? 250 : 320;
+  const L = 60, R = 18, T = 14, B = 30, pw = W - L - R, ph = H - T - B;
+  const visible = spec.series.filter(s => !spec.hidden.has(s.id));
+  const label = `Графік: ${spec.label || ''}`;
+  let lo = Infinity, hi = -Infinity;
+  for (const s of visible) for (let i = from; i <= to; i++) { const v = s.vals[i]; if (v != null) { if (v < lo) lo = v; if (v > hi) hi = v; } }
+  // a reading from before the period still starts the line, so it takes part in the scale
+  for (const s of visible) if (!s.derived && s.vals[from] == null) { const f = ffill(s.vals)[from]; if (f != null) { if (f < lo) lo = f; if (f > hi) hi = f; } }
+  if (isFinite(lo)) [lo, hi] = withMinSpan(lo, hi, minSpanFor(hi, spec.kind === 'derived' && !isMargin()));
+  if (!isFinite(lo)) {
+    host.innerHTML = `<svg class="chart" viewBox="0 0 ${W} 120" role="img" aria-label="${esc(label)}: немає даних"><text class="empty-msg" x="${W / 2}" y="64">${esc(spec.note || (visible.length ? 'За цей період немає даних' : 'Усі лінії сховано: увімкніть їх кружечками вище'))}</text></svg>`;
+    return;
+  }
+  const padded = (hi - lo) * 0.08 || Math.abs(hi) * 0.04 || 1;
+  const { ticks, step } = niceTicks(lo - padded, hi + padded, H < 280 ? 4 : 5);
+  const y0 = ticks[0], y1 = ticks[ticks.length - 1];
+  const X0 = L + 10, X1 = L + pw - 10, dn = D.dayNum, span = Math.max(1, dn[to] - dn[from]);
+  const X = i => from === to ? L + pw / 2 : X0 + (dn[i] - dn[from]) / span * (X1 - X0);
+  const Y = v => T + ph - (v - y0) / (y1 - y0) * ph;
+  const f1 = n => n.toFixed(1);
+
+  let svg = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}" tabindex="0">`;
+  for (const t of ticks) svg += `<line class="grid" x1="${L}" x2="${W - R}" y1="${f1(Y(t))}" y2="${f1(Y(t))}"/><text class="axis" x="${L - 8}" y="${f1(Y(t) + 4)}" text-anchor="end">${esc(spec.tick(t, step))}</text>`;
+  // x labels: every day when there are few, else about six evenly spread
+  const idx = []; for (let i = from; i <= to; i++) idx.push(i);
+  const want = idx.length <= 8 ? idx : Array.from({ length: 6 }, (_, k) => { const target = dn[from] + k * span / 5; return idx.reduce((b, i) => Math.abs(dn[i] - target) < Math.abs(dn[b] - target) ? i : b, from); });
+  [...new Set(want)].forEach(i => { svg += `<text class="axis" x="${f1(X(i))}" y="${H - 8}" text-anchor="middle">${esc(dShort(D.days[i]))}</text>`; });
+  if (spec.zero && y0 < 0 && y1 > 0) svg += `<line class="zero" x1="${L}" x2="${W - R}" y1="${f1(Y(0))}" y2="${f1(Y(0))}"/>`;
+  if (spec.ref && spec.ref.v > y0 && spec.ref.v < y1) svg += `<line class="ref" x1="${L}" x2="${W - R}" y1="${f1(Y(spec.ref.v))}" y2="${f1(Y(spec.ref.v))}"/><text class="ref-label" x="${W - R - 4}" y="${f1(Y(spec.ref.v) - 4)}" text-anchor="end">${esc(spec.ref.label)}</text>`;
+
+  // lines: Prizzi last so it stays on top
+  const order = visible.filter(s => !s.own).concat(visible.filter(s => s.own));
+  for (const s of order) {
+    const ff = s.derived ? s.vals : ffill(s.vals);
+    const pp = [];
+    for (let i = from; i <= to; i++) {
+      if (s.vals[i] != null) pp.push({ i, v: s.vals[i], real: true });
+      else if (i === from && ff[i] != null && !s.derived) pp.push({ i, v: ff[i], real: false });   // a reading from before the period
+    }
+    let solid = '', gaps = '';
+    pp.forEach((a, k) => {
+      const b = pp[k + 1];
+      if (b) {
+        const seg = `M${f1(X(a.i))} ${f1(Y(a.v))}H${f1(X(b.i))}V${f1(Y(b.v))}`;
+        if (!s.derived && (b.i - a.i > 1 || !a.real)) gaps += seg; else solid += seg;
+      } else if (!s.derived && a.i < to && D.dayNum[to] - D.dayNum[a.i] <= STALE_DAYS) {
+        gaps += `M${f1(X(a.i))} ${f1(Y(a.v))}H${f1(X(to))}`;                                    // assumed to hold until the end of the period
+      } else if (s.derived && a.i < to) {
+        solid += `M${f1(X(a.i))} ${f1(Y(a.v))}H${f1(X(to))}`;
+      }
+    });
+    const w = s.w || 2, op = s.faint ? 0.55 : 1;
+    if (gaps) svg += `<path class="gap" d="${gaps}" style="stroke:${s.color};stroke-width:${w}px;opacity:${s.faint ? 0.4 : 0.75}"/>`;
+    if (solid) svg += `<path class="ln" d="${solid}" style="stroke:${s.color};stroke-width:${w}px;opacity:${op}${s.dash ? `;stroke-dasharray:${s.dash}` : ''}"/>`;
+    const dense = to - from + 1 > 60;
+    if (!s.derived) for (let k = 0; k < pp.length; k++) {
+      const p = pp[k];
+      if (!p.real) continue;
+      const out = s.stock && s.stock[p.i] === 'o';
+      const before = k > 0 ? pp[k - 1] : null;
+      if (dense && !out && before && k < pp.length - 1 && Math.abs(p.v - before.v) <= EPS) continue;
+      svg += `<circle cx="${f1(X(p.i))}" cy="${f1(Y(p.v))}" r="${s.own ? 3.3 : 2.7}" style="fill:${out ? 'var(--surface)' : s.color};stroke:${s.color};stroke-width:${out ? 1.8 : 0}px"/>`;
+    }
+  }
+  svg += '<g class="hov"></g></svg>';
+  host.innerHTML = svg + '<div class="ctip" hidden></div>';
+
+  // --- the readout under the pointer ---
+  const el = $('svg.chart', host), hov = $('.hov', host), tip = $('.ctip', host);
+  let cur = null;
+  const valueAt = (s, i) => {                                   // the reading of that day, or the last one before it
+    if (s.vals[i] != null) return { v: s.vals[i], real: true };
+    if (s.derived) return null;
+    for (let k = i - 1; k >= from - 1 && k >= 0; k--) if (s.vals[k] != null) return D.dayNum[i] - D.dayNum[k] <= STALE_DAYS ? { v: s.vals[k], real: false, at: k } : null;
+    return null;
+  };
+  const show = i => {
+    cur = i;
+    const rows = [];
+    let g = `<line class="guide" x1="${f1(X(i))}" x2="${f1(X(i))}" y1="${T}" y2="${T + ph}"/>`;
+    for (const s of order) {
+      const a = valueAt(s, i);
+      if (!a) continue;
+      g += `<circle cx="${f1(X(i))}" cy="${f1(Y(a.v))}" r="4.4" style="fill:var(--surface);stroke:${s.color};stroke-width:2.2px"/>`;
+      rows.push({ s, a });
+    }
+    hov.innerHTML = g;
+    const rank = s => s.own ? 0 : s.group ? 2 : 1;
+    rows.sort((p, q) => rank(p.s) - rank(q.s) || (p.s.group ? Math.abs(q.a.v) - Math.abs(p.a.v) : q.a.v - p.a.v));
+    let html = `<div class="t-date">${esc(dDow(D.days[i]))}</div>`;
+    const lead = rows.filter(r => !r.s.group), grouped = rows.filter(r => r.s.group);
+    const shownRows = lead.concat(grouped.slice(0, 6));      // single listings of a competitor: the six that moved most
+    for (const { s, a } of shownRows) {
+      const hp = s.hp ? (s.hp[a.real ? i : a.at]) : null;
+      let sec = '';
+      if (s.hp && spec.cogs) sec = isMargin() ? (hp == null ? '' : money(hp)) : (marginOf(hp, spec.cogs) == null ? '' : 'маржа ' + pct(marginOf(hp, spec.cogs)));
+      const prevIdx = (() => { for (let k = i - 1; k >= 0; k--) if (s.vals[k] != null) return k; return -1; })();
+      const dlt = a.real && prevIdx >= 0 && !s.derived && Math.abs(s.vals[i] - s.vals[prevIdx]) > 1e-9 ? s.vals[i] - s.vals[prevIdx] : null;
+      const color = s.own ? 'var(--accent)' : s.color;
+      html += `<div class="t-row${s.own ? ' own' : ''}${a.real ? '' : ' carried'}"><i class="sw" style="--c:${color}"></i><span class="t-name">${esc(s.label)}${s.badge ? ' ' + cfgBadge(s.badge) : ''}</span>`
+        + `<span class="t-val">${esc(s.fmt ? s.fmt(a.v) : spec.fmt(a.v))}${sec ? ` <span class="dim">${esc(sec)}</span>` : ''}</span>`;
+      const extra = [];
+      if (dlt != null) extra.push(`<span class="${s.own ? 'own-move' : moveCls(dlt)}">${dlt < 0 ? '▼' : '▲'} ${esc(isMargin() ? pts(dlt) : sMoney(dlt))}</span> проти попередньої перевірки`);
+      if (!a.real) extra.push(`остання перевірка ${esc(dShort(D.days[a.at]))}`);
+      if (s.stock && a.real && s.stock[i] === 'o') extra.push('<span class="t-out">розпродано</span>');
+      if (s.seller && a.real && s.seller[i]) extra.push('продавець ' + esc(s.seller[i]));
+      if (extra.length) html += `<span class="t-extra">${extra.join(' · ')}</span>`;
+      html += '</div>';
+    }
+    if (rows.length > shownRows.length) html += `<div class="dim" style="margin-top:4px">і ще ${rows.length - shownRows.length} ${plural(rows.length - shownRows.length, 'позиція', 'позиції', 'позицій')}</div>`;
+    tip.innerHTML = html;
+    tip.hidden = false;
+    if (getComputedStyle(tip).position !== 'absolute') return;      // narrow screen: the readout is a block under the chart
+    const box = host.getBoundingClientRect(), k = box.width / W, tw = tip.offsetWidth;
+    let left = X(i) * k + 14;
+    if (left + tw > box.width - 4) left = X(i) * k - tw - 14;
+    tip.style.left = Math.max(4, left) + 'px';
+    tip.style.top = '8px';
+  };
+  const hide = () => { cur = null; hov.innerHTML = ''; tip.hidden = true; };
+  const nearest = e => {
+    const r = el.getBoundingClientRect(), px = (e.clientX - r.left) * (W / r.width);
+    let best = from, bd = Infinity;
+    for (let i = from; i <= to; i++) { const d = Math.abs(X(i) - px); if (d < bd) { bd = d; best = i; } }
+    return best;
+  };
+  el.addEventListener('pointermove', e => { const i = nearest(e); if (i !== cur) show(i); });
+  el.addEventListener('pointerdown', e => show(nearest(e)));
+  el.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') hide(); });
+  el.addEventListener('blur', hide);
+  el.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { e.preventDefault(); show(Math.min(to, Math.max(from, (cur == null ? to : cur) + (e.key === 'ArrowRight' ? 1 : -1)))); }
+    else if (e.key === 'Home') { e.preventDefault(); show(from); }
+    else if (e.key === 'End') { e.preventDefault(); show(to); }
+    else if (e.key === 'Escape') hide();
+  });
+}
+
+// ================= page chrome =================
+function renderMeta() {
+  const n = D.n;
+  $('#run-meta').textContent = n ? `Дані: ${n} ${plural(n, 'день', 'дні', 'днів')}, ${dLong(D.days[0])}${n > 1 ? ' - ' + dLong(D.days[n - 1]) : ''}` : '';
+}
+
+function syncControls() {
+  const press = (id, val) => $$(`#${id} button`).forEach(b => { const on = String(b.dataset.v) === String(val); b.classList.toggle('active', on); b.setAttribute('aria-pressed', on); });
+  press('view-tabs', state.view); press('metric', state.metric); press('range', state.range === 'custom' ? '' : state.range);
+  press('compare', state.compare); press('basis', state.basis);
+  $('#compare button[data-v="none"]').disabled = state.view === 'comps';
+  $('#compare button[data-v="none"]').title = state.view === 'comps' ? 'У розрізі «По конкурентах» конкуренти потрібні' : 'Сховати конкурентів і дивитись лише нашу ціну';
+  $('#basis-group').hidden = isMargin();
+  const win = windowOf();
+  const f = $('#d-from'), t = $('#d-to');
+  if (D.n) {
+    f.min = t.min = D.days[0]; f.max = t.max = D.days[D.n - 1];
+    f.value = win.empty ? (state.from || '') : D.days[win.from];
+    t.value = win.empty ? (state.to || '') : D.days[win.to];
+  }
+}
+
+function renderNotes(win) {
+  const parts = [];
+  const note = $('#filter-note'), n = [];
+  if (state.compare === 'below') n.push('Показані лише позиції конкурентів, чия ціна голови на кінець періоду нижча за нашу або така сама. Картки, таблиця і графік рахуються по них.');
+  if (state.compare === 'above') n.push('Показані лише позиції конкурентів, чия ціна голови на кінець періоду вища за нашу або така сама. Картки, таблиця і графік рахуються по них.');
+  if (state.compare === 'none') n.push('Конкурентів приховано: лишилась лише наша ціна.');
+  if (isMargin()) n.push('Маржа = (ціна голови - собівартість) / ціна. Для конкурента: маржа, яку ми мали б, продаючи за його ціною.');
+  note.hidden = !n.length;
+  note.textContent = n.join(' ');
+  if (D.ownSince && D.days[win.from] < D.ownSince) parts.push(`Наші ціни зі Shopify відомі з ${dLong(D.ownSince)}: за дні до цього нашої ціни на графіках немає.`);
+  if (D.models.some(m => m.own_src === 'config')) parts.push('* Товар ще не зв’язаний зі Shopify: його ціна береться з конфігурації і однакова в усі дні.');
+  parts.push('Одна точка - один день за часом Каліфорнії, остання вдала перевірка дня. Розпродані позиції не враховуються в «Ринок зараз».');
+  $('#notes').innerHTML = parts.map(esc).join('<br>');
+}
+
+function render() {
+  syncControls();
+  const win = windowOf();
+  renderMeta();
+  if (win.empty) {
+    $('#cards').innerHTML = '';
+    $('#view').innerHTML = '<div class="empty">У вибраному періоді немає даних. Оберіть інші дати або натисніть «Усе».</div>';
+    $('#notes').textContent = '';
+    $('#filter-note').hidden = true;
+    return;
+  }
+  renderCards(win);
+  if (state.view === 'models') renderModels(win); else renderComps(win);
+  renderNotes(win);
+}
+
+function setRangePreset(v) {
+  state.range = v === 'all' ? 'all' : +v;
+  state.from = state.to = null;
+}
+
+function bind() {
+  const group = (id, fn) => $('#' + id).addEventListener('click', e => { const b = e.target.closest('button[data-v]'); if (b && !b.disabled) { fn(b.dataset.v); saveState(); render(); } });
+  group('view-tabs', v => { state.view = v; if (v === 'comps' && state.compare === 'none') state.compare = 'all'; });
+  group('metric', v => { state.metric = v; });
+  group('range', v => setRangePreset(v));
+  group('compare', v => { state.compare = v; });
+  group('basis', v => { state.basis = v; });
+  const dates = () => {
+    let f = $('#d-from').value, t = $('#d-to').value;
+    if (!ISO.test(f) && !ISO.test(t)) return;
+    f = ISO.test(f) ? f : D.days[0]; t = ISO.test(t) ? t : D.days[D.n - 1];
+    if (f > t) t = f;
+    state.range = 'custom'; state.from = f; state.to = t;
+    saveState(); render();
+  };
+  $('#d-from').addEventListener('change', dates);
+  $('#d-to').addEventListener('change', dates);
+  let timer = null;
+  $('#q').addEventListener('input', e => { clearTimeout(timer); timer = setTimeout(() => { state.q = e.target.value; render(); }, 120); });
+
+  const view = $('#view');
+  const toggleRow = tr => { const k = tr.dataset.key; if (state.open.has(k)) state.open.delete(k); else state.open.add(k); render(); };
+  view.addEventListener('click', e => {
+    const th = e.target.closest('th[data-col]');
+    if (th && !th.classList.contains('nosort')) {
+      const key = state.view, [col, desc] = state.sort[key];
+      state.sort[key] = col === th.dataset.col ? [col, !desc] : [th.dataset.col, !['name', 'dom'].includes(th.dataset.col)];
+      render(); return;
+    }
+    const chip = e.target.closest('.chip');
+    if (chip) {
+      const key = chip.dataset.chart, set = state.hidden[key] || (state.hidden[key] = new Set());
+      if (chip.dataset.group === 'rows') {
+        let ids = [];
+        try { ids = JSON.parse(chip.dataset.ids || '[]'); } catch (err) { ids = []; }
+        const allHidden = ids.every(id => set.has(id));
+        ids.forEach(id => allHidden ? set.delete(id) : set.add(id));
+      } else if (set.has(chip.dataset.series)) set.delete(chip.dataset.series); else set.add(chip.dataset.series);
+      render(); return;
+    }
+    if (e.target.closest('a')) return;
+    const tr = e.target.closest('tr.mrow');
+    if (tr) toggleRow(tr);
+  });
+  view.addEventListener('keydown', e => {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('tr.mrow')) { e.preventDefault(); toggleRow(e.target); }
+  });
+  let rt = null, lastW = window.innerWidth;
+  window.addEventListener('resize', () => {
+    clearTimeout(rt);
+    rt = setTimeout(() => { if (D && D.n && window.innerWidth !== lastW) { lastW = window.innerWidth; render(); } }, 160);
+  });
+}
+
+function initLegend() {
+  const box = $('#legend-box'), btn = $('#help-btn');
+  const smooth = () => (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
+  const setOpen = open => {
+    box.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.textContent = open ? '× Закрити легенду' : '? Як користуватися';
+    try { localStorage.setItem('trendsLegendOpen', open ? '1' : '0'); } catch (e) { /* fine */ }
+  };
+  let open = true;
+  try {
+    open = localStorage.getItem('trendsLegendOpen') === '1' || localStorage.getItem('trendsLegendSeen') !== '1';
+    localStorage.setItem('trendsLegendSeen', '1');
+  } catch (e) { open = true; }
+  setOpen(open);
+  btn.addEventListener('click', () => { setOpen(box.hidden); if (!box.hidden) box.scrollIntoView({ behavior: smooth(), block: 'nearest' }); });
+  box.querySelectorAll('[data-legend-close]').forEach(b => b.addEventListener('click', () => { setOpen(false); window.scrollTo({ top: 0, behavior: smooth() }); }));
+  document.addEventListener('keydown', e => {
+    const t = e.target;
+    if (e.key === 'Escape' && !box.hidden && !(t && t.closest && t.closest('input, select, textarea'))) setOpen(false);
+  });
+}
+
+// trends.html#m:<model id> or #c:<site> opens that row (the table page links here from every opened model)
+function applyHash() {
+  let h = '';
+  try { h = decodeURIComponent((location.hash || '').slice(1)); } catch (e) { return false; }
+  const m = /^([mc]):(.{1,120})$/.exec(h);
+  if (!m) return false;
+  if (m[1] === 'm' && D.models.some(x => x.id === m[2])) { state.view = 'models'; state.open = new Set(['m:' + m[2]]); state.q = ''; return true; }
+  if (m[1] === 'c' && D.domains.includes(m[2])) { state.view = 'comps'; if (state.compare === 'none') state.compare = 'all'; state.open = new Set(['c:' + m[2]]); state.q = ''; return true; }
+  return false;
+}
+function showHashRow() { const row = $('#view tr.mrow.open'); if (row) row.scrollIntoView({ block: 'start', behavior: 'auto' }); }
+
+function showProblem(html) {
+  $('#cards').innerHTML = '';
+  $('#view').innerHTML = `<div class="empty">${html}</div>`;
+  $('#toolbar').hidden = true;
+}
+
+async function init() {
+  initLegend();
+  let raw;
+  try {
+    const r = await fetch('history/series.json', { cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    raw = await r.json();
+  } catch (e) {
+    showProblem('Дані динаміки ще не створені або не завантажились. Вони з’являються після наступного запуску парсера.<br><a href="index.html">Повернутись до таблиці</a>');
+    return;
+  }
+  if (!raw || !Array.isArray(raw.days) || !Array.isArray(raw.models)) { showProblem('Файл з даними динаміки має незнайомий вигляд. <a href="index.html">Повернутись до таблиці</a>'); return; }
+  D = prepare(raw);
+  if (!D.n) { showProblem('Даних для динаміки ще немає: потрібен хоча б один запуск парсера. <a href="index.html">Повернутись до таблиці</a>'); return; }
+  loadState();
+  // the first model (best seller) starts opened, so the page opens on a chart
+  const first = D.models.slice().sort((a, b) => (b.sales == null ? -1 : b.sales) - (a.sales == null ? -1 : a.sales))[0];
+  if (first) state.open.add('m:' + first.id);
+  const linked = applyHash();
+  bind();
+  render();
+  if (linked) showHashRow();
+  window.addEventListener('hashchange', () => { if (applyHash()) { saveState(); render(); showHashRow(); } });
+}
+init();
+</script>
+</body>
+</html>
