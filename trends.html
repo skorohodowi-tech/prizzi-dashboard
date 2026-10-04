@@ -301,6 +301,11 @@ table.ev tr:last-child td { border-bottom: none; }
 
 /* ---- charts ---- */
 .chart-wrap { position: relative; }
+.net-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; box-shadow: var(--shadow); margin-bottom: 14px; }
+.net-card h3 { margin: 0 0 4px; font-size: 15px; }
+.net-card .net-sub { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; line-height: 1.5; }
+.net-legend { display: flex; gap: 8px 18px; flex-wrap: wrap; font-size: 12px; color: var(--text-muted); margin-top: 10px; }
+.net-legend i { display: inline-block; width: 18px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
 svg.chart { display: block; width: 100%; height: auto; touch-action: pan-y; outline: none; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
 svg.chart:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .chart .grid { stroke: var(--border); stroke-width: 1; }
@@ -400,7 +405,7 @@ svg.spark { display: block; width: 120px; height: 30px; overflow: visible; }
   <div class="toolbar" id="toolbar">
     <div class="fgroup"><span class="flabel">По чому дивитись</span>
       <div class="pill-group" id="view-tabs" role="group" aria-label="По чому дивитись">
-        <button type="button" data-v="models">По моделях</button><button type="button" data-v="comps">По конкурентах</button>
+        <button type="button" data-v="models">По моделях</button><button type="button" data-v="comps">По конкурентах</button><button type="button" data-v="net" title="Усі моделі разом: наша ціна проти ринку по всій мережі, без розбивки по конкурентах">Загалом по мережі</button>
       </div></div>
     <div class="fgroup"><span class="flabel">Що показувати</span>
       <div class="pill-group" id="metric" role="group" aria-label="Що показувати">
@@ -421,6 +426,10 @@ svg.spark { display: block; width: 120px; height: 30px; overflow: visible; }
     <div class="fgroup" id="basis-group"><span class="flabel">Ціна конкурента</span>
       <div class="pill-group" id="basis" role="group" aria-label="Як рахувати ціну конкурента">
         <button type="button" data-v="head" title="Перераховано на голову, як у таблиці: можна порівнювати з нашою ціною">Як голова</button><button type="button" data-v="listed" title="Те, що написано на сторінці конкурента (голова, комплект або зібрана машина)">Як на сайті</button>
+      </div></div>
+    <div class="fgroup" id="net-group" hidden><span class="flabel">Як рахувати середнє</span>
+      <div class="pill-group" id="weight" role="group" aria-label="Як рахувати середнє по моделях">
+        <button type="button" data-v="equal" title="Кожна модель має однаковий вплив">Моделі однаково</button><button type="button" data-v="sales" title="Модель впливає тим більше, чим більше її продано (Shopify, з 1 січня)">За продажами</button>
       </div></div>
     <div class="fgroup grow"><label class="flabel" for="q">Пошук</label>
       <input type="text" id="q" placeholder="Модель або сайт" autocomplete="off"></div>
@@ -481,7 +490,7 @@ function ffillStock(s) { let last = '-', out = ''; for (const ch of s) { if (ch 
 
 // ================= state =================
 const STORE_KEY = 'trends.v1';
-const state = { view: 'models', metric: 'price', range: 30, from: null, to: null, compare: 'all', basis: 'head',
+const state = { view: 'models', weight: 'equal', metric: 'price', range: 30, from: null, to: null, compare: 'all', basis: 'head',
                 q: '', open: new Set(), hidden: {}, sort: { models: ['sales', true], comps: ['moves', true] } };
 const isMargin = () => state.metric === 'margin';
 const basisKey = () => (!isMargin() && state.basis === 'listed') ? 'p' : 'h';
@@ -490,7 +499,8 @@ const ISO = /^\d{4}-\d{2}-\d{2}$/;
 function loadState() {
   try {
     const s = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
-    if (['models', 'comps'].includes(s.view)) state.view = s.view;
+    if (['models', 'comps', 'net'].includes(s.view)) state.view = s.view;
+    if (['equal', 'sales'].includes(s.weight)) state.weight = s.weight;
     if (['price', 'margin'].includes(s.metric)) state.metric = s.metric;
     if ([7, 30, 90, 'all', 'custom'].includes(s.range)) state.range = s.range;
     if (ISO.test(s.from || '')) state.from = s.from;
@@ -502,7 +512,7 @@ function loadState() {
 }
 function saveState() {
   try {
-    localStorage.setItem(STORE_KEY, JSON.stringify({ view: state.view, metric: state.metric, range: state.range, from: state.from, to: state.to, compare: state.compare, basis: state.basis }));
+    localStorage.setItem(STORE_KEY, JSON.stringify({ view: state.view, weight: state.weight, metric: state.metric, range: state.range, from: state.from, to: state.to, compare: state.compare, basis: state.basis }));
   } catch (e) { /* not worth failing for */ }
 }
 
@@ -1275,6 +1285,67 @@ function drawChart(host, spec) {
   });
 }
 
+
+// ================= the whole network: Prizzi against the market, all models together =================
+// For each day: for every model that has our Shopify price and at least one fresh in-stock competitor head price,
+// how far our price is from the cheapest, the average and the most expensive of those, then the mean of that over the
+// models (equally, or weighted by units sold). Positive = we are more expensive than the market.
+function netSeries(win) {
+  const out = { min: new Array(D.n).fill(null), avg: new Array(D.n).fill(null), max: new Array(D.n).fill(null), n: new Array(D.n).fill(0) };
+  const useSales = state.weight === 'sales';
+  for (let i = win.from; i <= win.to; i++) {
+    let sw = 0, a = 0, b = 0, c = 0, n = 0;
+    for (const m of D.models) {
+      if (m.own_src === 'config') continue;                    // a hand-kept config price is not a reading of ours
+      const own = m.ownF[i];
+      if (!(own > 0)) continue;
+      const v = [];
+      for (const r of m.rows) { const h = r.ff.h[i]; if (h == null || !fresh(r, i) || r.ff.s[i] === 'o') continue; v.push(h); }
+      if (!v.length) continue;
+      const w = useSales ? (m.sales || 0) : 1;
+      if (!(w > 0)) continue;
+      const lo = Math.min(...v), hi = Math.max(...v), av = mean(v);
+      sw += w; a += w * (own / lo - 1); b += w * (own / av - 1); c += w * (own / hi - 1); n++;
+    }
+    if (n) { out.min[i] = a / sw; out.avg[i] = b / sw; out.max[i] = c / sw; out.n[i] = n; }
+  }
+  return out;
+}
+
+function renderNet(win) {
+  const ns = netSeries(win);
+  const first = k => { for (let i = win.from; i <= win.to; i++) if (ns[k][i] != null) return ns[k][i]; return null; };
+  const last = k => { for (let i = win.to; i >= win.from; i--) if (ns[k][i] != null) return ns[k][i]; return null; };
+  const lastN = (() => { for (let i = win.to; i >= win.from; i--) if (ns.n[i]) return ns.n[i]; return 0; })();
+  const LINES = [
+    { k: 'min', label: 'проти найдешевшого конкурента', color: 'var(--c1)', hint: 'Найдешевша свіжа ціна голови в наявності' },
+    { k: 'avg', label: 'проти середнього по ринку', color: 'var(--c0)', hint: 'Середня свіжа ціна голови в наявності' },
+    { k: 'max', label: 'проти найдорожчого конкурента', color: 'var(--c2)', hint: 'Найдорожча свіжа ціна голови в наявності' },
+  ];
+  const card = (l) => {
+    const now = last(l.k), was = first(l.k);
+    const d = now != null && was != null && now !== was ? now - was : null;
+    return `<div class="card"><div class="label">Prizzi ${esc(l.label)}</div><div class="value">${sPct(now)}</div>`
+      + `<div class="sub">${esc(l.hint)}. ${d == null ? 'За період без змін.' : 'За період: ' + pts(d) + '.'}</div></div>`;
+  };
+  $('#cards').innerHTML = LINES.map(card).join('')
+    + `<div class="card"><div class="label">Моделей у розрахунку</div><div class="value">${lastN}</div><div class="sub">з ${D.models.length}: потрібна наша ціна зі Shopify і хоча б одна свіжа ціна конкурента в наявності.</div></div>`;
+  $('#filter-note').hidden = true;
+
+  const full = k => ns[k];
+  const series = LINES.map((l, ci) => ({ id: l.k, label: 'Prizzi ' + l.label, color: l.color, w: l.k === 'avg' ? 3.4 : 2.2, dash: l.k === 'avg' ? '' : '6 4', vals: full(l.k), derived: true, ci, fmt: fmtAgg }));
+  const spec = { win, series, hidden: new Set(), kind: 'derived', fmt: v => sPct(v), tick: (v, st) => sPct(v, st < 0.01 ? 1 : 0), zero: true, cogs: null,
+                 note: 'Для цього періоду ще немає днів, де відома і наша ціна зі Shopify, і ціни конкурентів.', label: 'Prizzi проти ринку по мережі' };
+  const weightTxt = state.weight === 'sales' ? 'з вагою за продажами (Shopify, з 1 січня)' : 'кожна модель має однаковий вплив';
+  $('#view').innerHTML = `<div class="net-card"><h3>Prizzi проти ринку: усі моделі разом</h3>`
+    + `<div class="net-sub">Відсоток, на який наша ціна голови вища (+) або нижча (-) за ринок, у середньому по моделях (${esc(weightTxt)}). Нуль означає, що ми на рівні ринку.</div>`
+    + `<div class="chart-wrap" id="net-chart"></div>`
+    + `<div class="net-legend">${LINES.map(l => `<span><i style="background:${l.color}"></i>${esc(l.label)}</span>`).join('')}</div></div>`;
+  drawChart($('#net-chart'), spec);
+  const gap = D.ownSince && D.days[win.from] < D.ownSince ? `Наші ціни зі Shopify відомі з ${dLong(D.ownSince)}: за дні до цього лінії порожні. ` : '';
+  $('#notes').innerHTML = esc(gap + 'Ринок: ціни голови конкурентів у наявності, прочитані не раніше ніж ' + STALE_DAYS + ' днів тому (розпродані не рахуються). Моделі, які ще не зв’язані зі Shopify, у розрахунок не входять. Одна точка - один день за часом Каліфорнії.');
+}
+
 // ================= page chrome =================
 function renderMeta() {
   const n = D.n;
@@ -1284,10 +1355,13 @@ function renderMeta() {
 function syncControls() {
   const press = (id, val) => $$(`#${id} button`).forEach(b => { const on = String(b.dataset.v) === String(val); b.classList.toggle('active', on); b.setAttribute('aria-pressed', on); });
   press('view-tabs', state.view); press('metric', state.metric); press('range', state.range === 'custom' ? '' : state.range);
-  press('compare', state.compare); press('basis', state.basis);
+  press('compare', state.compare); press('basis', state.basis); press('weight', state.weight);
+  const net = state.view === 'net';
+  $('#net-group').hidden = !net;
+  [$('#metric'), $('#compare'), $('#q')].forEach(el => { el.closest('.fgroup').hidden = net; });
   $('#compare button[data-v="none"]').disabled = state.view === 'comps';
   $('#compare button[data-v="none"]').title = state.view === 'comps' ? 'У розрізі «По конкурентах» конкуренти потрібні' : 'Сховати конкурентів і дивитись лише нашу ціну';
-  $('#basis-group').hidden = isMargin();
+  $('#basis-group').hidden = isMargin() || net;
   const win = windowOf();
   const f = $('#d-from'), t = $('#d-to');
   if (D.n) {
@@ -1323,6 +1397,7 @@ function render() {
     $('#filter-note').hidden = true;
     return;
   }
+  if (state.view === 'net') { renderNet(win); return; }
   renderCards(win);
   if (state.view === 'models') renderModels(win); else renderComps(win);
   renderNotes(win);
@@ -1340,6 +1415,7 @@ function bind() {
   group('range', v => setRangePreset(v));
   group('compare', v => { state.compare = v; });
   group('basis', v => { state.basis = v; });
+  group('weight', v => { state.weight = v; });
   const dates = () => {
     let f = $('#d-from').value, t = $('#d-to').value;
     if (!ISO.test(f) && !ISO.test(t)) return;
